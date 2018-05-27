@@ -1,3 +1,8 @@
-man intro
-man 7 intro
-man 7 hier
+MAN INFO
+--------
+  man intro
+  man 7 intro
+  man 7 hier
+
+SYMBOLLIC LINK, HARDLINK
+  ls-li
