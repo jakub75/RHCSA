@@ -1,0 +1,1870 @@
+<!DOCTYPE html>
+<!--[if IE 7 ]><html id="ie7" lang="en"><![endif]-->
+<!--[if IE 8 ]><html id="ie8" lang="en"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+		<link rel="profile" href="http://gmpg.org/xfn/11" />
+		<link rel="pingback" href="https://blog.remibergsma.com/xmlrpc.php" />
+		<title>My tips for the Red Hat RHCE exam &laquo; Remi Bergsma&#039;s blog</title>
+		<meta name="google-site-verification" content="iAtiH2Xd-5zCyMncwx5WkjA4Rn38cx9L7_-BQUw5iyM" />
+		<script src='https://r-login.wordpress.com/remote-login.php?action=js&amp;host=blog.remibergsma.com&amp;id=29899844&amp;t=1526897958&amp;back=https%3A%2F%2Fblog.remibergsma.com%2F2013%2F10%2F07%2Fmy-tips-for-the-red-hat-rhcsa-rhce-exam%2F' type="text/javascript"></script>
+		<script type="text/javascript">
+		/* <![CDATA[ */
+			if ( 'function' === typeof WPRemoteLogin ) {
+				document.cookie = "wordpress_test_cookie=test; path=/";
+				if ( document.cookie.match( /(;|^)\s*wordpress_test_cookie\=/ ) ) {
+					WPRemoteLogin();
+				}
+			}
+		/* ]]> */
+		</script>
+		<link rel='dns-prefetch' href='//s2.wp.com' />
+<link rel='dns-prefetch' href='//s1.wp.com' />
+<link rel='dns-prefetch' href='//remibergsma.wordpress.com' />
+<link rel='dns-prefetch' href='//s0.wp.com' />
+<link rel="alternate" type="application/rss+xml" title="Remi Bergsma&#039;s blog &raquo; Feed" href="https://blog.remibergsma.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Remi Bergsma&#039;s blog &raquo; Comments Feed" href="https://blog.remibergsma.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Remi Bergsma&#039;s blog &raquo; My tips for the Red Hat RHCE&nbsp;exam Comments Feed" href="https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/feed/" />
+	<script type="text/javascript">
+		/* <![CDATA[ */
+		function addLoadEvent(func) {
+			var oldonload = window.onload;
+			if (typeof window.onload != 'function') {
+				window.onload = func;
+			} else {
+				window.onload = function () {
+					oldonload();
+					func();
+				}
+			}
+		}
+		/* ]]> */
+	</script>
+			<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s0.wp.com\/wp-content\/mu-plugins\/wpcom-smileys\/twemoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s0.wp.com\/wp-content\/mu-plugins\/wpcom-smileys\/twemoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/s2.wp.com\/wp-includes\/js\/wp-emoji-release.min.js?m=1516999477h&ver=4.9.7-alpha-43298"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56692,8205,9792,65039],[55357,56692,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='all-css-0-1' href='https://s2.wp.com/_static/??-eJydktFuwyAMRX9oDGVrtqdp32KIl9ACRthp1b8fNKm6thuq9hJ84R7bmOhDUpaiYBQdZpX8PLrI+pAsBcXBeTzeqGfL/KR/x7zbIestSgK7UyfVsmf0IDioRCw3qoVZylj2QwKpjoCDA/QYiq2FhfR2pmo4lRabZZZbG5MyMqvyDW4OSqZS6J5btvXq0iwQB8iDLr4yFaMNkbBkSP8nVekjUWS3x4eTsBz9vfvnJd0wYhm+UFqf4WGEyTrwyhXLtVhgpyPJcngOWllHJOXJgjiKV0J9eXC5/RsZT2MJx9PQLrIFga3JDeRL1LLX2SydaJ4g11rr2qLWqZR26Fr89YDTRo+eDPhq+AwfXf/Sv3f9pnvdfgPv9GKv?cssminify=yes' type='text/css' media='all' />
+<script type='text/javascript'>
+/* <![CDATA[ */
+var related_posts_js_options = {"post_heading":"h4"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://s0.wp.com/_static/??-eJyVj+sKwjAMhV/IWoRN8Yf4LN0aZ2pvNulEn95OJuIUZRBo2nw551ReokDf2qyBpCl1zpCu47E0tJC/AOGwS4ph6dA/4TZ4Bs8D60KDFkQmSKorb0XoEL5wMRA7ICrQl+l7JPQ9wuUvZoCjak8iAeHtQ9VlEW3u0JNMYMsHtBgyTG7TLT5CSSljAofZSWLltUp6MLfYyCYEJk4qvrqZCmP2A3KPeo79Y1T4vdutqm29qqtqszZ3WUWzQw=='></script>
+<link rel='stylesheet' id='all-css-0-2' href='https://s1.wp.com/wp-content/mu-plugins/highlander-comments/style.css?m=1522184747h&cssminify=yes' type='text/css' media='all' />
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='highlander-comments-ie7-css'  href='https://s2.wp.com/wp-content/mu-plugins/highlander-comments/style-ie7.css?m=1351637563h&#038;ver=20110606' type='text/css' media='all' />
+<![endif]-->
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://remibergsma.wordpress.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://s1.wp.com/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Managing hundreds of Linux servers with CFEngine and Git: full control over&nbsp;configuration' href='https://blog.remibergsma.com/2013/08/31/managing-hundreds-of-servers-with-cfengine-and-git-full-control-over-configuration/' />
+<link rel='next' title='Monitoring disk space with&nbsp;CFEngine' href='https://blog.remibergsma.com/2013/11/04/monitoring-disk-space-with-cfengine/' />
+<meta name="generator" content="WordPress.com" />
+<link rel="canonical" href="https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/" />
+<link rel='shortlink' href='https://wp.me/p21sjy-uQ' />
+<link rel="alternate" type="application/json+oembed" href="https://public-api.wordpress.com/oembed/?format=json&amp;url=https%3A%2F%2Fblog.remibergsma.com%2F2013%2F10%2F07%2Fmy-tips-for-the-red-hat-rhcsa-rhce-exam%2F&amp;for=wpcom-auto-discovery" /><link rel="alternate" type="application/xml+oembed" href="https://public-api.wordpress.com/oembed/?format=xml&amp;url=https%3A%2F%2Fblog.remibergsma.com%2F2013%2F10%2F07%2Fmy-tips-for-the-red-hat-rhcsa-rhce-exam%2F&amp;for=wpcom-auto-discovery" />
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="My tips for the Red Hat RHCE exam" />
+<meta property="og:url" content="https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/" />
+<meta property="og:description" content="Last week I attended the Red Hat RH300 course (fast track) in Amsterdam and did the RHCSA and RHCE exams on the final day. I passed both RHCSA (283/300 points) and RHCE (300/300 points). I had a gr…" />
+<meta property="article:published_time" content="2013-10-07T21:19:59+00:00" />
+<meta property="article:modified_time" content="2013-10-07T21:19:59+00:00" />
+<meta property="og:site_name" content="Remi Bergsma&#039;s blog" />
+<meta property="og:image" content="https://remibergsma.files.wordpress.com/2013/10/rh_certifiedengineer_logo_rgb.jpg?w=185" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:site" content="@wordpressdotcom" />
+<meta name="twitter:text:title" content="My tips for the Red Hat RHCE&nbsp;exam" />
+<meta name="twitter:image" content="https://remibergsma.files.wordpress.com/2013/10/rh_certifiedengineer_logo_rgb.jpg?w=240" />
+<meta name="twitter:card" content="summary" />
+<meta property="article:publisher" content="https://www.facebook.com/WordPresscom" />
+
+<!-- End Jetpack Open Graph Tags -->
+<link rel="shortcut icon" type="image/x-icon" href="https://secure.gravatar.com/blavatar/dcb35ad07a45826f2aad1dded4b33c16?s=32" sizes="16x16" />
+<link rel="icon" type="image/x-icon" href="https://secure.gravatar.com/blavatar/dcb35ad07a45826f2aad1dded4b33c16?s=32" sizes="16x16" />
+<link rel="apple-touch-icon-precomposed" href="https://secure.gravatar.com/blavatar/dcb35ad07a45826f2aad1dded4b33c16?s=114" />
+<link rel='openid.server' href='https://remibergsma.wordpress.com/?openidserver=1' />
+<link rel='openid.delegate' href='https://remibergsma.wordpress.com/' />
+<link rel="search" type="application/opensearchdescription+xml" href="https://blog.remibergsma.com/osd.xml" title="Remi Bergsma&#039;s blog" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://s1.wp.com/opensearch.xml" title="WordPress.com" />
+		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+				<style type="text/css">
+			.recentcomments a {
+				display: inline !important;
+				padding: 0 !important;
+				margin: 0 !important;
+			}
+
+			table.recentcommentsavatartop img.avatar, table.recentcommentsavatarend img.avatar {
+				border: 0px;
+				margin: 0;
+			}
+
+			table.recentcommentsavatartop a, table.recentcommentsavatarend a {
+				border: 0px !important;
+				background-color: transparent !important;
+			}
+
+			td.recentcommentsavatarend, td.recentcommentsavatartop {
+				padding: 0px 0px 1px 0px;
+				margin: 0px;
+			}
+
+			td.recentcommentstextend {
+				border: none !important;
+				padding: 0px 0px 2px 10px;
+			}
+
+			.rtl td.recentcommentstextend {
+				padding: 0px 10px 2px 0px;
+			}
+
+			td.recentcommentstexttop {
+				border: none;
+				padding: 0px 0px 0px 10px;
+			}
+
+			.rtl td.recentcommentstexttop {
+				padding: 0px 10px 0px 0px;
+			}
+		</style>
+		<style type="text/css">
+.widget_twitter li {
+	word-wrap: break-word;
+}
+</style>
+<meta name="application-name" content="Remi Bergsma&#039;s blog" /><meta name="msapplication-window" content="width=device-width;height=device-height" /><meta name="msapplication-tooltip" content="Linux sysadmin, cloud computing and more!" /><meta name="msapplication-task" content="name=Subscribe;action-uri=https://blog.remibergsma.com/feed/;icon-uri=https://secure.gravatar.com/blavatar/dcb35ad07a45826f2aad1dded4b33c16?s=16" /><meta name="msapplication-task" content="name=Sign up for a free blog;action-uri=http://wordpress.com/signup/;icon-uri=https://s1.wp.com/i/favicon.ico" /><meta name="msapplication-task" content="name=WordPress.com Support;action-uri=http://support.wordpress.com/;icon-uri=https://s1.wp.com/i/favicon.ico" /><meta name="msapplication-task" content="name=WordPress.com Forums;action-uri=http://forums.wordpress.com/;icon-uri=https://s1.wp.com/i/favicon.ico" /><meta name="description" content="Last week I attended the Red Hat RH300 course (fast track) in Amsterdam and did the RHCSA and RHCE exams on the final day. I passed both RHCSA (283/300 points) and RHCE (300/300 points). I had a great teacher because, apart from technical stuff, I also learned how to approach the exams. The objectives for&hellip;" />
+<link rel="amphtml" href="https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/amp/"><style type="text/css" id="syntaxhighlighteranchor"></style>
+	</head>
+	<body class="post-template-default single single-post postid-1912 single-format-standard mp6 customizer-styles-applied highlander-enabled highlander-light">
+
+		
+					<div id="menu-above-header" class="menu-navigation navbar navbar-fixed-top">
+				<div class="navbar-inner ">
+					<div class="container">
+
+						<a class="btn btn-navbar" data-toggle="collapse" data-target=".above-header-nav-collapse">
+						  <span class="icon-bar"></span>
+						  <span class="icon-bar"></span>
+						  <span class="icon-bar"></span>
+						</a>
+
+						<div class="nav-collapse above-header-nav-collapse">
+							<div class="menu-header-container"><ul id="menu-main-menu" class="nav nav-menu menu"><li class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="/" title="Home">Home</a></li><li class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="https://blog.remibergsma.com/about/" title="About Remi Bergsma">About me</a></li><li class=" menu-item menu-item-type-taxonomy menu-item-object-category"><a href="https://blog.remibergsma.com/category/cloud-orchestration/" title="Cloud Orchestration">Cloud Orchestration</a></li><li class=" menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent"><a href="https://blog.remibergsma.com/category/linux-sysadmin/" title="Linux sysadmin posts">Linux sysadmin</a></li><li class=" menu-item menu-item-type-taxonomy menu-item-object-category"><a href="https://blog.remibergsma.com/category/mac-osx/" title="Mac OSX posts">Mac OSX</a></li><li class=" menu-item menu-item-type-taxonomy menu-item-object-category"><a href="https://blog.remibergsma.com/category/other/" title="Other posts">Other posts</a></li><li class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://github.com/remibergsma" title="My code on Github">Github</a></li></ul></div>
+						</div><!-- /.nav-collapse -->
+
+						<div id="social-networking" class="clearfix">
+							
+<ul class="nav social-icons clearfix">
+
+			<li><a class="fademe" href="http://twitter.com/remibergsma" title="Twitter" target="_blank"><img src="https://s2.wp.com/wp-content/themes/premium/standard/images/social/small/twitter.png" alt="Twitter" /></a></li>
+	
+	
+	
+			<li><a class="fademe" href="http://nl.linkedin.com/in/remibergsma" title="LinkedIn" target="_blank"><img src="https://s2.wp.com/wp-content/themes/premium/standard/images/social/small/linkedin.png" alt="LinkedIn" /></a></li>
+	
+	
+	
+	
+	
+	
+	
+	<li><a class="fademe" href="https://blog.remibergsma.com/feed/" title="Subscribe via RSS" target="_blank"><img src="https://s2.wp.com/wp-content/themes/premium/standard/images/social/small/rss.png" alt="Subscribe via RSS" /></a></li>
+
+</ul>
+						</div><!-- /#social-networking -->
+
+					</div> <!-- /container -->
+				</div><!-- /navbar-inner -->
+			</div> <!-- /#menu-above-header -->
+		
+					<div id="header" class="imageless">
+				<div id="head-wrapper" class="clearfix">
+					<div class="container">
+						<div class="row">
+
+							
+															<div class="span12">
+									<div id="logo">
+										
+											
+												<p id="site-title">
+													<a href="https://blog.remibergsma.com/" title="" rel="home" style="color:#000;">Remi Bergsma&#039;s blog</a>
+												</p>
+
+											
+										
+										<small id="site-description">Linux sysadmin, cloud computing and more!</small>
+
+									</div><!-- /#logo -->
+								</div><!-- /.span12 -->
+							
+						</div><!-- /row -->
+					</div><!--/container -->
+				</div> <!-- /#head-wrapper -->
+			</div> <!-- /#header -->
+
+			
+<div id="wrapper">
+	<div class="container">
+		<div class="row">
+
+			
+			<div id="main" class="span8 clearfix" role="main">
+
+				<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><ul class="breadcrumb"><li class="home-breadcrumb"><a href="https://blog.remibergsma.com" itemprop="url"><span itemprop="title">Home</span></a><span class="divider">/</span></li><li><a href="https://blog.remibergsma.com/category/linux-sysadmin/" itemprop="url"><span itemprop="title">Linux sysadmin</span></a><span class="divider">/</span></li><li class="active">My tips for the Red Hat RHCE&nbsp;exam</li></ul></div>
+				
+<div id="post-1912" class="post format-standard clearfix post-1912 type-post status-publish hentry category-linux-sysadmin tag-certification tag-exam tag-red-hat tag-rhce tag-rhcsa">
+
+	<div class="post-header clearfix">
+
+				
+		<div class="title-wrap clearfix">
+												<h1 class="post-title entry-title">My tips for the Red Hat RHCE&nbsp;exam</h1>
+										<div class="post-header-meta">
+													<span class="the-time updated">7 October 2013</span>
+													<span class="the-comment-link">&mdash;&nbsp;<a href="https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/#comments">32 Comments</a></span>
+							</div><!-- /.post-header-meta -->
+		</div><!-- /.title-wrap -->
+
+	</div> <!-- /.post-header -->
+
+
+	<div id="content-1912" class="entry-content clearfix">
+					<p><img data-attachment-id="1939" data-permalink="https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/rh_certifiedengineer_logo_rgb/" data-orig-file="https://remibergsma.files.wordpress.com/2013/10/rh_certifiedengineer_logo_rgb.jpg" data-orig-size="404,654" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title="Red Hat Certified Engineer" data-image-description="" data-medium-file="https://remibergsma.files.wordpress.com/2013/10/rh_certifiedengineer_logo_rgb.jpg?w=185&#038;h=300" data-large-file="https://remibergsma.files.wordpress.com/2013/10/rh_certifiedengineer_logo_rgb.jpg?w=404" class="size-medium wp-image-1939 alignleft" alt="Red Hat Certified Engineer" src="https://remibergsma.files.wordpress.com/2013/10/rh_certifiedengineer_logo_rgb.jpg?w=185&#038;h=300" width="185" height="300" srcset="https://remibergsma.files.wordpress.com/2013/10/rh_certifiedengineer_logo_rgb.jpg?w=185&amp;h=300 185w, https://remibergsma.files.wordpress.com/2013/10/rh_certifiedengineer_logo_rgb.jpg?w=370&amp;h=600 370w, https://remibergsma.files.wordpress.com/2013/10/rh_certifiedengineer_logo_rgb.jpg?w=93&amp;h=150 93w" sizes="(max-width: 185px) 100vw, 185px" />Last week I attended the <a href="http://www.redhat.com/training/courses/rh300/" target="_blank">Red Hat RH300</a> course (fast track) in Amsterdam and did the RHCSA and RHCE exams on the final day. I passed both RHCSA (283/300 points) and RHCE (300/300 points). I had a great teacher because, apart from technical stuff, I also learned how to approach the exams.</p>
+<p>The objectives for both <a href="http://www.redhat.com/training/courses/ex200/examobjective" target="_blank">RHCSA</a> and <a href="http://www.redhat.com/training/courses/ex300/examobjective" target="_blank">RHCE</a> are well documented on Red Hat&#8217;s site. You should start to make sure you know everything inside out. Practise, practise, practise. Learn to use the documentation that ships with <a href="http://www.redhat.com/products/enterprise-linux/server/" target="_blank">RHEL</a>, as this is the only help available: no internet access is provided during the exam. There are several books available that help prepare and Red Hat has very good courses as well, that I really recommend. I assume you should be able to study this all one way or the other.</p>
+<p>One advise on this though: don&#8217;t try to remember everything but remember the references instead. If you know a man page has examples you can use, just remember the man page. If you know documentation is in a separate package, remember the package name. A references takes less &#8216;memory&#8217; in your head, so you can remember more. This will speed up your work significantly.</p>
+<p>But wait, technical knowledge is just one challenge. Watch out for the pitfalls:</p>
+<p><strong>Pitfall #1: Time</strong><br />
+Most experienced Linux sysadmins will probably be able to pass the exam if there was no restriction on time. You could test, trial-and-error and read man pages all day long. Even start from scratch when you seriously broke something. Well, it&#8217;s time to wake up: in reality time on the exam is (very) limited. And yet many candidates do not manage their limited exam time.</p>
+<p>A classic example: spending too much time on something that does not work right away. Instead, accept the fact it doesn&#8217;t work now and continue with other tasks or else time will run out. When you have given everything a first attempt, you can always return to a task that you skipped before.</p>
+<p>Not only should you know immediately what to do when you read the tasks, you need to know the fastest way to configure something. Yes, the <em>fastest</em> way. Not the way you prefer to do it, or have been doing it until now. I&#8217;ve heard people complaining about the GUI/TUI tools. And I agree a GUI is not something you want on a server. But hey, if &#8216;<em>system-config-authentication</em>&#8216; has a ready to fill-in form and makes you configure LDAP with TLS and Kerberos in 60 seconds. Why would you want to go for the manual way on the exam? Yet, some feel they are better off configuring this on the command line. There&#8217;s simply no time for that approach, nor will it bring in more points. Be smart, take the fast track.</p>
+<p><strong>Pitfall #2: Your assumptions<br />
+</strong>Reading is a big problem because candidates tend not do read very well on the exam. Especially when aware of Pitfall #1, they will not spend the first few minutes reading instructions. A waste of time, right? But in reality this will cost precious time later on because assumptions are made, but never checked. Is it a good idea to start working on something, without seeing the bigger picture?</p>
+<p>I don&#8217;t think so. Sometimes, tasks are related but not grouped together. When you read everything first, you might find that doing two tasks together is easier. Or you might choose a different approach based on all information, instead on just a single task. Reading ahead helps you understand the bigger picture.</p>
+<p>Imagine you are asked to configure, let&#8217;s say, NTP. Some assume they have to sync to a time source that is provided and then have to setup a NTP server and serve time to the local network. But isn&#8217;t is a waste of time to configure a NTP server, when all you have to do is setup a NTP client? This also occurs with tweaking configurations more than is being asked for. Keep it simple and do exactly what is asked for.</p>
+<p><b>How I avoided the pitfalls<br />
+</b>Value your own work through the eyes of a customer. Example: if a web server is perfectly configured but a firewall prevents access to it, then this does not work for a client. Website is down: zero value. Red Hat might also values your work on the exam like this. Keep that in mind.</p>
+<p>Structure is another important thing to work on. This was my approach on the exam:</p>
+<p style="padding-left:30px;">1. Imagine you are working for a client that has written down everything they want from you. Read it all and try to understand the bigger picture. Then reorganize it: group together what belongs to each other.</p>
+<p style="padding-left:30px;">2. Install everything at once. After step 1 you should have identified all packages you need to install. Do it now. Then &#8216;<em>chkconfig on</em>&#8216; every service you will configure later. Why? Because it is easy and it prevents forgetting it later on. Remember: a perfectly configured service that does not start at boot brings in zero points.</p>
+<p style="padding-left:30px;">3. Then setup the firewall for the services you identified at step 1 and installed at step 2. You probably need to tweak this as you go through the tasks, but just setup the basics now. This will make it easier later on.</p>
+<p>On my exam the first 3 steps took less than 20 minutes and provided a solid base to build on.</p>
+<p style="padding-left:30px;">4. Work through all tasks and remember: Be smart, take the fast track. Also, skip any task that you are stuck on for more than 10 minutes.</p>
+<p style="padding-left:30px;">Reboot a few times and recheck everything you have finished so far. Your work is reviewed after a reboot anyway, so you should make sure your changes survive a reboot. The sooner you find a problem, the sooner you will be able to solve it.</p>
+<p style="padding-left:30px;">5. When everything is done, carefully check the items a final time. Then you&#8217;re done. And, you probably have some time left!</p>
+<p><strong>Conclusion</strong><br />
+The Red Hat exams are challenging. You absolutely need the technical skills as outlined in the objectives. But, I believe that alone is not enough. To pass, you should manage your limited time on the exam by taking the fast track and remember the right references. Before you start, make sure to have a clear picture in mind of what you are supposed to do. Start by building a basic setup and work from there. Finally, always check your assumptions.</p>
+<p>Good luck! 🙂</p>
+<div id="jp-post-flair" class="sharedaddy sd-rating-enabled sd-like-enabled sd-sharing-enabled"><div class="sd-block sd-rating"><h3 class="sd-title">Rate this:</h3><div class="pd-rating" id="pd_rating_holder_5580413_post_1912"></div></div><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><h3 class="sd-title">Share this:</h3><div class="sd-content"><ul><li class="share-twitter"><a rel="nofollow" data-shared="sharing-twitter-1912" class="share-twitter sd-button share-icon" href="https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/?share=twitter" target="_blank" title="Click to share on Twitter"><span>Twitter</span></a></li><li class="share-linkedin"><a rel="nofollow" data-shared="sharing-linkedin-1912" class="share-linkedin sd-button share-icon" href="https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/?share=linkedin" target="_blank" title="Click to share on LinkedIn"><span>LinkedIn</span></a></li><li class="share-google-plus-1"><a rel="nofollow" data-shared="sharing-google-1912" class="share-google-plus-1 sd-button share-icon" href="https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/?share=google-plus-1" target="_blank" title="Click to share on Google+"><span>Google</span></a></li><li class="share-facebook"><a rel="nofollow" data-shared="sharing-facebook-1912" class="share-facebook sd-button share-icon" href="https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/?share=facebook" target="_blank" title="Click to share on Facebook"><span>Facebook</span></a></li><li><a href="#" class="sharing-anchor sd-button share-more"><span>More</span></a></li><li class="share-end"></li></ul><div class="sharing-hidden"><div class="inner" style="display: none;"><ul><li class="share-pinterest"><a rel="nofollow" data-shared="sharing-pinterest-1912" class="share-pinterest sd-button share-icon" href="https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/?share=pinterest" target="_blank" title="Click to share on Pinterest"><span>Pinterest</span></a></li><li class="share-tumblr"><a rel="nofollow" data-shared="" class="share-tumblr sd-button share-icon" href="https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/?share=tumblr" target="_blank" title="Click to share on Tumblr"><span>Tumblr</span></a></li><li class="share-end"></li><li class="share-reddit"><a rel="nofollow" data-shared="" class="share-reddit sd-button share-icon" href="https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/?share=reddit" target="_blank" title="Click to share on Reddit"><span>Reddit</span></a></li><li class="share-email"><a rel="nofollow" data-shared="" class="share-email sd-button share-icon" href="https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/?share=email" target="_blank" title="Click to email this to a friend"><span>Email</span></a></li><li class="share-end"></li><li class="share-print"><a rel="nofollow" data-shared="" class="share-print sd-button share-icon" href="https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/#print" target="_blank" title="Click to print"><span>Print</span></a></li><li class="share-end"></li></ul></div></div></div></div></div><div class='sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-unloaded' id='like-post-wrapper-29899844-1912-5b029d263ddda' data-src='//widgets.wp.com/likes/index.html?ver=20180319#blog_id=29899844&amp;post_id=1912&amp;origin=remibergsma.wordpress.com&amp;obj_id=29899844-1912-5b029d263ddda' data-name='like-post-frame-29899844-1912-5b029d263ddda'><h3 class='sd-title'>Like this:</h3><div class='likes-widget-placeholder post-likes-widget-placeholder' style='height: 55px;'><span class='button'><span>Like</span></span> <span class="loading">Loading...</span></div><span class='sd-text-color'></span><a class='sd-link-color'></a></div>
+<div id='jp-relatedposts' class='jp-relatedposts' >
+	<h3 class="jp-relatedposts-headline"><em>Related</em></h3>
+</div></div>					</div><!-- /.entry-content -->
+
+	<div class="post-meta">
+		<div class="row-fluid">
+			<div class="meta-date-cat-tags span9">
+													<span class="the-category">In <a href="https://blog.remibergsma.com/category/linux-sysadmin/" rel="category tag">Linux sysadmin</a></span>				
+													<span class="the-tags"><a href="https://blog.remibergsma.com/tag/certification/" rel="tag">certification</a>, <a href="https://blog.remibergsma.com/tag/exam/" rel="tag">exam</a>, <a href="https://blog.remibergsma.com/tag/red-hat/" rel="tag">Red Hat</a>, <a href="https://blog.remibergsma.com/tag/rhce/" rel="tag">RHCE</a>, <a href="https://blog.remibergsma.com/tag/rhcsa/" rel="tag">RHCSA</a></span>				
+			</div><!-- /meta-date-cat-tags -->
+			<div class="meta-comment-link span3">
+				<a class="fademe pull-right post-link" href="https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/" title="permalink "><img src="https://s2.wp.com/wp-content/themes/premium/standard/images/icn-permalink.png" alt="permalink " /></a>
+								<span class="the-edit-post"></span>
+			</div><!-- /meta-comment-link -->
+		</div><!--/row-fluid -->
+	</div><!-- /.post-meta -->
+
+</div> <!-- /#post- -->														
+
+
+			<div id="comments" class="clearfix">
+			<h3>32 responses to <em>My tips for the Red Hat RHCE&nbsp;exam</em></h3>
+			<ol class="commentlist">
+					<li class="comment even thread-even depth-1 clearfix highlander-comment" id="li-comment-5014">
+		<div class="comment-container">
+							<div class="avatar-holder">
+					<img alt='' src='https://1.gravatar.com/avatar/1db9e549d5921621c76a71f03d58cc1e?s=50&#038;d=identicon&#038;r=G' class='avatar avatar-50' height='50' width='50' />
+				</div><!-- /.avatar-holder -->
+			
+			<div class="comment-entry"	id="comment-5014">
+
+				<div class="comment-head">
+					<span class="name"><a href='http://www.theleetech.com' rel='external nofollow' class='url'>Zaheer Ahmad Khan</a></span>
+											<span class="date"><a href="https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/#comment-5014" title="Permalink">26 January 2014 at 20:52</a></span>
+						<span class="edit"></span>
+									</div><!-- /.comment-head -->
+
+				
+				<div class="comment-text">
+					<p>simply great article regarding Red Hat exams</p>
+				</div><!-- /.comment-text -->
+
+				<div class="reply">
+					<a rel='nofollow' class='comment-reply-link' href='https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/?replytocom=5014#respond' onclick='return addComment.moveForm( "comment-5014", "5014", "respond", "1912" )' aria-label='Reply to Zaheer Ahmad Khan'>Reply</a>				</div><!-- /.reply -->
+
+			</div><!-- /.comment-entry -->
+		</div><!-- /comment-container -->
+<ul class="children">
+	<li class="comment byuser comment-author-remibergsma bypostauthor odd alt depth-2 clearfix highlander-comment" id="li-comment-25642">
+		<div class="comment-container">
+							<div class="avatar-holder">
+					<img alt='' src='https://0.gravatar.com/avatar/674bc68c51b45bb00d18d9d9314456fa?s=50&#038;d=identicon&#038;r=G' class='avatar avatar-50' height='50' width='50' />
+				</div><!-- /.avatar-holder -->
+			
+			<div class="comment-entry"	id="comment-25642">
+
+				<div class="comment-head">
+					<span class="name"><a href='http://blog.remibergsma.com' rel='external nofollow' class='url'>Remi Bergsma</a></span>
+											<span class="date"><a href="https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/#comment-25642" title="Permalink">6 April 2015 at 09:14</a></span>
+						<span class="edit"></span>
+									</div><!-- /.comment-head -->
+
+				
+				<div class="comment-text">
+					<p>Thanks!</p>
+				</div><!-- /.comment-text -->
+
+				<div class="reply">
+					<a rel='nofollow' class='comment-reply-link' href='https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/?replytocom=25642#respond' onclick='return addComment.moveForm( "comment-25642", "25642", "respond", "1912" )' aria-label='Reply to Remi Bergsma'>Reply</a>				</div><!-- /.reply -->
+
+			</div><!-- /.comment-entry -->
+		</div><!-- /comment-container -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1 clearfix highlander-comment" id="li-comment-6585">
+		<div class="comment-container">
+							<div class="avatar-holder">
+					<img alt='' src='https://0.gravatar.com/avatar/324e73fd59bd4a78e0e4214cc0c09a25?s=50&#038;d=identicon&#038;r=G' class='avatar avatar-50' height='50' width='50' />
+				</div><!-- /.avatar-holder -->
+			
+			<div class="comment-entry"	id="comment-6585">
+
+				<div class="comment-head">
+					<span class="name">Andrew</span>
+											<span class="date"><a href="https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/#comment-6585" title="Permalink">1 March 2014 at 03:09</a></span>
+						<span class="edit"></span>
+									</div><!-- /.comment-head -->
+
+				
+				<div class="comment-text">
+					<p>Nice article. Question. How literally do you answer questions. EG: &#8220;Create a directory called &#8216;/bla&#8217; and give user &#8216;bob&#8217; access to it.&#8221; Do you give bob read only access or r/w? And another&#8230; &#8220;Make sure &#8216;postfix&#8217; is accessibly only from network &#8216;192.168.0.0/24&#8242;&#8221;. Do you give access from the localhost also?</p>
+<p>Finally, are all RHCE exams the same or do they change for different people, locations, attempts, times&#8230;?</p>
+<p>Cheers.</p>
+				</div><!-- /.comment-text -->
+
+				<div class="reply">
+					<a rel='nofollow' class='comment-reply-link' href='https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/?replytocom=6585#respond' onclick='return addComment.moveForm( "comment-6585", "6585", "respond", "1912" )' aria-label='Reply to Andrew'>Reply</a>				</div><!-- /.reply -->
+
+			</div><!-- /.comment-entry -->
+		</div><!-- /comment-container -->
+<ul class="children">
+	<li class="comment byuser comment-author-remibergsma bypostauthor odd alt depth-2 clearfix highlander-comment" id="li-comment-8605">
+		<div class="comment-container">
+							<div class="avatar-holder">
+					<img alt='' src='https://0.gravatar.com/avatar/674bc68c51b45bb00d18d9d9314456fa?s=50&#038;d=identicon&#038;r=G' class='avatar avatar-50' height='50' width='50' />
+				</div><!-- /.avatar-holder -->
+			
+			<div class="comment-entry"	id="comment-8605">
+
+				<div class="comment-head">
+					<span class="name"><a href='http://blog.remibergsma.com' rel='external nofollow' class='url'>Remi Bergsma</a></span>
+											<span class="date"><a href="https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/#comment-8605" title="Permalink">6 April 2014 at 13:01</a></span>
+						<span class="edit"></span>
+									</div><!-- /.comment-head -->
+
+				
+				<div class="comment-text">
+					<p>Hi Andrew,</p>
+<p>All I can say is that the questions are crystal clear and you need to do exactly what they ask for. No more, no less.</p>
+				</div><!-- /.comment-text -->
+
+				<div class="reply">
+					<a rel='nofollow' class='comment-reply-link' href='https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/?replytocom=8605#respond' onclick='return addComment.moveForm( "comment-8605", "8605", "respond", "1912" )' aria-label='Reply to Remi Bergsma'>Reply</a>				</div><!-- /.reply -->
+
+			</div><!-- /.comment-entry -->
+		</div><!-- /comment-container -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1 clearfix highlander-comment" id="li-comment-12457">
+		<div class="comment-container">
+							<div class="avatar-holder">
+					<img alt='' src='https://1.gravatar.com/avatar/d4111ca112db979f468f05ea5fbd65a1?s=50&#038;d=identicon&#038;r=G' class='avatar avatar-50' height='50' width='50' />
+				</div><!-- /.avatar-holder -->
+			
+			<div class="comment-entry"	id="comment-12457">
+
+				<div class="comment-head">
+					<span class="name">rohit</span>
+											<span class="date"><a href="https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/#comment-12457" title="Permalink">23 June 2014 at 15:47</a></span>
+						<span class="edit"></span>
+									</div><!-- /.comment-head -->
+
+				
+				<div class="comment-text">
+					<p>Hello, </p>
+<p>I took RHCE exam after preparing for 6 months and failed with score zero, yes zero. I did my exam very well and I  just missed only one question and I&#8217;m  very sure  that other than one question , I got the right o/p for rest of the question, as  I tested each and every o/p from vm  and physical machine. One big thing I missed to check was by rebooting the vm. I did not had time to check by rebooting the VM. And I believe something got screwed because of  that system did not come up after reboot.</p>
+<p>After getting the result I tried with all the questions I remember from rhce exam at  home lab and for none of the questions/scenario , system start-up was not screwed up.  Not able to recreate the same scenario.</p>
+<p>I will be re-taking the exam in next available slot and definitely this time I will be practicing each and every config by rebooting and not sure If I will be able to recreate the same scenario during my practice like screwing up system-start-up.</p>
+<p>I may not be able to discuss any specific questions and answers here. What I&#8217;m loking for is which  services or commands could have screwed up the start-up of my exam vm. I&#8217;m looking for answers like &#8211;  fdisk /dd / mount /fdisk/iscsi/iptables/selinux.</p>
+<p>Is there any other non-technical reason this would have happen ?<br />
+Do you think the non RHCE questions , like the questions which we fill before the exam starts ?<br />
+I was working till the moment 00:00 Mins left , Can this be a problem ?</p>
+<p>Thanks in Advance.</p>
+<p>Thanks,<br />
+rhce-user</p>
+				</div><!-- /.comment-text -->
+
+				<div class="reply">
+					<a rel='nofollow' class='comment-reply-link' href='https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/?replytocom=12457#respond' onclick='return addComment.moveForm( "comment-12457", "12457", "respond", "1912" )' aria-label='Reply to rohit'>Reply</a>				</div><!-- /.reply -->
+
+			</div><!-- /.comment-entry -->
+		</div><!-- /comment-container -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1 clearfix highlander-comment" id="li-comment-13123">
+		<div class="comment-container">
+							<div class="avatar-holder">
+					<img alt='' src='https://1.gravatar.com/avatar/ded595e4808c57f2c246c76238f30f1a?s=50&#038;d=identicon&#038;r=G' class='avatar avatar-50' height='50' width='50' />
+				</div><!-- /.avatar-holder -->
+			
+			<div class="comment-entry"	id="comment-13123">
+
+				<div class="comment-head">
+					<span class="name"><a href='http://gravatar.com/anon4cec' rel='external nofollow' class='url'>Catmando</a></span>
+											<span class="date"><a href="https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/#comment-13123" title="Permalink">8 July 2014 at 00:00</a></span>
+						<span class="edit"></span>
+									</div><!-- /.comment-head -->
+
+				
+				<div class="comment-text">
+					<p>Something as simple as a typo in /etc/fstab could cause a system to drop into maintenance mode when booting.</p>
+				</div><!-- /.comment-text -->
+
+				<div class="reply">
+					<a rel='nofollow' class='comment-reply-link' href='https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/?replytocom=13123#respond' onclick='return addComment.moveForm( "comment-13123", "13123", "respond", "1912" )' aria-label='Reply to Catmando'>Reply</a>				</div><!-- /.reply -->
+
+			</div><!-- /.comment-entry -->
+		</div><!-- /comment-container -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1 clearfix highlander-comment" id="li-comment-14457">
+		<div class="comment-container">
+							<div class="avatar-holder">
+					<img alt='' src='https://2.gravatar.com/avatar/e0272ed9cf6b37b1beec07ebc1400b5e?s=50&#038;d=identicon&#038;r=G' class='avatar avatar-50' height='50' width='50' />
+				</div><!-- /.avatar-holder -->
+			
+			<div class="comment-entry"	id="comment-14457">
+
+				<div class="comment-head">
+					<span class="name">Swap</span>
+											<span class="date"><a href="https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/#comment-14457" title="Permalink">2 August 2014 at 00:09</a></span>
+						<span class="edit"></span>
+									</div><!-- /.comment-head -->
+
+				
+				<div class="comment-text">
+					<p>&#8216;I took the RHCE exam recently and after the exam i realised that i hadn&#8217;t disabled the firewall.I scored only 117 marks.So how much mark do we actually loose for not diabling firewall in an RHCE exam?</p>
+				</div><!-- /.comment-text -->
+
+				<div class="reply">
+					<a rel='nofollow' class='comment-reply-link' href='https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/?replytocom=14457#respond' onclick='return addComment.moveForm( "comment-14457", "14457", "respond", "1912" )' aria-label='Reply to Swap'>Reply</a>				</div><!-- /.reply -->
+
+			</div><!-- /.comment-entry -->
+		</div><!-- /comment-container -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1 clearfix highlander-comment" id="li-comment-21044">
+		<div class="comment-container">
+							<div class="avatar-holder">
+					<img alt='' src='https://2.gravatar.com/avatar/e42cecbfaa13cf8beb92b56fad9177e3?s=50&#038;d=identicon&#038;r=G' class='avatar avatar-50' height='50' width='50' />
+				</div><!-- /.avatar-holder -->
+			
+			<div class="comment-entry"	id="comment-21044">
+
+				<div class="comment-head">
+					<span class="name">David</span>
+											<span class="date"><a href="https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/#comment-21044" title="Permalink">3 November 2014 at 15:23</a></span>
+						<span class="edit"></span>
+									</div><!-- /.comment-head -->
+
+				
+				<div class="comment-text">
+					<p>I sat rhce last week and was asked to configure a service. I can&#8217;t figure out how I supposed to do so as it wasn&#8217;t installed and there was no info about accessing any repos to get the required packages. I probably missed something or did something stupid but I  wonder if anyone else has been in a similar situation and could help me figure out what I was doing wrong.</p>
+				</div><!-- /.comment-text -->
+
+				<div class="reply">
+					<a rel='nofollow' class='comment-reply-link' href='https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/?replytocom=21044#respond' onclick='return addComment.moveForm( "comment-21044", "21044", "respond", "1912" )' aria-label='Reply to David'>Reply</a>				</div><!-- /.reply -->
+
+			</div><!-- /.comment-entry -->
+		</div><!-- /comment-container -->
+<ul class="children">
+	<li class="comment even depth-2 clearfix highlander-comment" id="li-comment-25035">
+		<div class="comment-container">
+							<div class="avatar-holder">
+					<img alt='' src='https://0.gravatar.com/avatar/6e3bd7324a09426b5c9ee200a14a7313?s=50&#038;d=identicon&#038;r=G' class='avatar avatar-50' height='50' width='50' />
+				</div><!-- /.avatar-holder -->
+			
+			<div class="comment-entry"	id="comment-25035">
+
+				<div class="comment-head">
+					<span class="name">Naushad Nazeer Pasha</span>
+											<span class="date"><a href="https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/#comment-25035" title="Permalink">3 March 2015 at 10:41</a></span>
+						<span class="edit"></span>
+									</div><!-- /.comment-head -->
+
+				
+				<div class="comment-text">
+					<p>You were suppose to configure yum repository by using the given url.</p>
+				</div><!-- /.comment-text -->
+
+				<div class="reply">
+					<a rel='nofollow' class='comment-reply-link' href='https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/?replytocom=25035#respond' onclick='return addComment.moveForm( "comment-25035", "25035", "respond", "1912" )' aria-label='Reply to Naushad Nazeer Pasha'>Reply</a>				</div><!-- /.reply -->
+
+			</div><!-- /.comment-entry -->
+		</div><!-- /comment-container -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt depth-2 clearfix highlander-comment" id="li-comment-28507">
+		<div class="comment-container">
+							<div class="avatar-holder">
+					<img alt='' src='https://1.gravatar.com/avatar/10dc6a8439a2a9f9d708e14b80ae8049?s=50&#038;d=identicon&#038;r=G' class='avatar avatar-50' height='50' width='50' />
+				</div><!-- /.avatar-holder -->
+			
+			<div class="comment-entry"	id="comment-28507">
+
+				<div class="comment-head">
+					<span class="name"><a href='http://studybychandu.blogspot.in/' rel='external nofollow' class='url'>Chandan Pawar</a></span>
+											<span class="date"><a href="https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/#comment-28507" title="Permalink">4 October 2015 at 20:02</a></span>
+						<span class="edit"></span>
+									</div><!-- /.comment-head -->
+
+				
+				<div class="comment-text">
+					<p>hi David .. like you same error i faced .and i got fail&#8230;&#8230;&#8230;&#8230;</p>
+				</div><!-- /.comment-text -->
+
+				<div class="reply">
+					<a rel='nofollow' class='comment-reply-link' href='https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/?replytocom=28507#respond' onclick='return addComment.moveForm( "comment-28507", "28507", "respond", "1912" )' aria-label='Reply to Chandan Pawar'>Reply</a>				</div><!-- /.reply -->
+
+			</div><!-- /.comment-entry -->
+		</div><!-- /comment-container -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1 clearfix highlander-comment" id="li-comment-22280">
+		<div class="comment-container">
+							<div class="avatar-holder">
+					<img alt='' src='https://1.gravatar.com/avatar/1f1b89669fcd8ab0aae4d840db71fad9?s=50&#038;d=identicon&#038;r=G' class='avatar avatar-50' height='50' width='50' />
+				</div><!-- /.avatar-holder -->
+			
+			<div class="comment-entry"	id="comment-22280">
+
+				<div class="comment-head">
+					<span class="name">Goutham</span>
+											<span class="date"><a href="https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/#comment-22280" title="Permalink">25 November 2014 at 12:53</a></span>
+						<span class="edit"></span>
+									</div><!-- /.comment-head -->
+
+				
+				<div class="comment-text">
+					<p>do you need any CCNA knowledge or desktop engineering knowledge to take up the RHCE course n certification. Many frighten me by saying the same . Im really confused please help me.</p>
+				</div><!-- /.comment-text -->
+
+				<div class="reply">
+					<a rel='nofollow' class='comment-reply-link' href='https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/?replytocom=22280#respond' onclick='return addComment.moveForm( "comment-22280", "22280", "respond", "1912" )' aria-label='Reply to Goutham'>Reply</a>				</div><!-- /.reply -->
+
+			</div><!-- /.comment-entry -->
+		</div><!-- /comment-container -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1 clearfix highlander-comment" id="li-comment-25034">
+		<div class="comment-container">
+							<div class="avatar-holder">
+					<img alt='' src='https://0.gravatar.com/avatar/6e3bd7324a09426b5c9ee200a14a7313?s=50&#038;d=identicon&#038;r=G' class='avatar avatar-50' height='50' width='50' />
+				</div><!-- /.avatar-holder -->
+			
+			<div class="comment-entry"	id="comment-25034">
+
+				<div class="comment-head">
+					<span class="name">Naushad Nazeer Pasha</span>
+											<span class="date"><a href="https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/#comment-25034" title="Permalink">3 March 2015 at 10:38</a></span>
+						<span class="edit"></span>
+									</div><!-- /.comment-head -->
+
+				
+				<div class="comment-text">
+					<p>on 27/02/2015 i wrote both RHCSA and RHCE exams and i scored RHCSA 283/300 (small mistake which i realized later, which costed me 17 marks) and RHCE 300/300.<br />
+very happy after getting the result.</p>
+				</div><!-- /.comment-text -->
+
+				<div class="reply">
+					<a rel='nofollow' class='comment-reply-link' href='https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/?replytocom=25034#respond' onclick='return addComment.moveForm( "comment-25034", "25034", "respond", "1912" )' aria-label='Reply to Naushad Nazeer Pasha'>Reply</a>				</div><!-- /.reply -->
+
+			</div><!-- /.comment-entry -->
+		</div><!-- /comment-container -->
+<ul class="children">
+	<li class="comment even depth-2 clearfix highlander-comment" id="li-comment-26185">
+		<div class="comment-container">
+							<div class="avatar-holder">
+					<img alt='' src='https://1.gravatar.com/avatar/d53d5a799025acf02e74085bf1a9d4e3?s=50&#038;d=identicon&#038;r=G' class='avatar avatar-50' height='50' width='50' />
+				</div><!-- /.avatar-holder -->
+			
+			<div class="comment-entry"	id="comment-26185">
+
+				<div class="comment-head">
+					<span class="name">Zedryx</span>
+											<span class="date"><a href="https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/#comment-26185" title="Permalink">13 May 2015 at 06:52</a></span>
+						<span class="edit"></span>
+									</div><!-- /.comment-head -->
+
+				
+				<div class="comment-text">
+					<p>Hi can you give me a tips on RHCSA Exam?</p>
+				</div><!-- /.comment-text -->
+
+				<div class="reply">
+					<a rel='nofollow' class='comment-reply-link' href='https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/?replytocom=26185#respond' onclick='return addComment.moveForm( "comment-26185", "26185", "respond", "1912" )' aria-label='Reply to Zedryx'>Reply</a>				</div><!-- /.reply -->
+
+			</div><!-- /.comment-entry -->
+		</div><!-- /comment-container -->
+<ul class="children">
+	<li class="comment byuser comment-author-remibergsma bypostauthor odd alt depth-3 clearfix highlander-comment" id="li-comment-26328">
+		<div class="comment-container">
+							<div class="avatar-holder">
+					<img alt='' src='https://0.gravatar.com/avatar/674bc68c51b45bb00d18d9d9314456fa?s=50&#038;d=identicon&#038;r=G' class='avatar avatar-50' height='50' width='50' />
+				</div><!-- /.avatar-holder -->
+			
+			<div class="comment-entry"	id="comment-26328">
+
+				<div class="comment-head">
+					<span class="name"><a href='http://blog.remibergsma.com' rel='external nofollow' class='url'>Remi Bergsma</a></span>
+											<span class="date"><a href="https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/#comment-26328" title="Permalink">23 May 2015 at 13:10</a></span>
+						<span class="edit"></span>
+									</div><!-- /.comment-head -->
+
+				
+				<div class="comment-text">
+					<p>All I can say is read the blog above. It&#8217;ll be enough to pass 🙂</p>
+				</div><!-- /.comment-text -->
+
+				<div class="reply">
+									</div><!-- /.reply -->
+
+			</div><!-- /.comment-entry -->
+		</div><!-- /comment-container -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even depth-2 clearfix highlander-comment" id="li-comment-26331">
+		<div class="comment-container">
+							<div class="avatar-holder">
+					<img alt='' src='https://1.gravatar.com/avatar/d53d5a799025acf02e74085bf1a9d4e3?s=50&#038;d=identicon&#038;r=G' class='avatar avatar-50' height='50' width='50' />
+				</div><!-- /.avatar-holder -->
+			
+			<div class="comment-entry"	id="comment-26331">
+
+				<div class="comment-head">
+					<span class="name">zedryx</span>
+											<span class="date"><a href="https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/#comment-26331" title="Permalink">24 May 2015 at 02:52</a></span>
+						<span class="edit"></span>
+									</div><!-- /.comment-head -->
+
+				
+				<div class="comment-text">
+					<p>Sir naushad can you give advice tips on rhcsa exam, or do you have training materials can you share to me.</p>
+				</div><!-- /.comment-text -->
+
+				<div class="reply">
+					<a rel='nofollow' class='comment-reply-link' href='https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/?replytocom=26331#respond' onclick='return addComment.moveForm( "comment-26331", "26331", "respond", "1912" )' aria-label='Reply to zedryx'>Reply</a>				</div><!-- /.reply -->
+
+			</div><!-- /.comment-entry -->
+		</div><!-- /comment-container -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1 clearfix highlander-comment" id="li-comment-25059">
+		<div class="comment-container">
+							<div class="avatar-holder">
+					<img alt='' src='https://1.gravatar.com/avatar/1b5606c2c57e342d63dd0b61d9d75d05?s=50&#038;d=identicon&#038;r=G' class='avatar avatar-50' height='50' width='50' />
+				</div><!-- /.avatar-holder -->
+			
+			<div class="comment-entry"	id="comment-25059">
+
+				<div class="comment-head">
+					<span class="name">RaunakKhadkikar</span>
+											<span class="date"><a href="https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/#comment-25059" title="Permalink">4 March 2015 at 18:48</a></span>
+						<span class="edit"></span>
+									</div><!-- /.comment-head -->
+
+				
+				<div class="comment-text">
+					<p>hi swap<br />
+               If stop and disable firewalld.service  the chances of getting score is really good,other option is that whenever you will do any task you have add permanent firewalld.service.So it is better to stop and disable firewalld.sevice at starting&#8230;</p>
+				</div><!-- /.comment-text -->
+
+				<div class="reply">
+					<a rel='nofollow' class='comment-reply-link' href='https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/?replytocom=25059#respond' onclick='return addComment.moveForm( "comment-25059", "25059", "respond", "1912" )' aria-label='Reply to RaunakKhadkikar'>Reply</a>				</div><!-- /.reply -->
+
+			</div><!-- /.comment-entry -->
+		</div><!-- /comment-container -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1 clearfix highlander-comment" id="li-comment-25060">
+		<div class="comment-container">
+							<div class="avatar-holder">
+					<img alt='' src='https://1.gravatar.com/avatar/1b5606c2c57e342d63dd0b61d9d75d05?s=50&#038;d=identicon&#038;r=G' class='avatar avatar-50' height='50' width='50' />
+				</div><!-- /.avatar-holder -->
+			
+			<div class="comment-entry"	id="comment-25060">
+
+				<div class="comment-head">
+					<span class="name">RaunakKhadkikar</span>
+											<span class="date"><a href="https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/#comment-25060" title="Permalink">4 March 2015 at 18:51</a></span>
+						<span class="edit"></span>
+									</div><!-- /.comment-head -->
+
+				
+				<div class="comment-text">
+					<p>hi David<br />
+I think you might be commiting mistake while giving the right path which we have to provide in system baseurl.</p>
+				</div><!-- /.comment-text -->
+
+				<div class="reply">
+					<a rel='nofollow' class='comment-reply-link' href='https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/?replytocom=25060#respond' onclick='return addComment.moveForm( "comment-25060", "25060", "respond", "1912" )' aria-label='Reply to RaunakKhadkikar'>Reply</a>				</div><!-- /.reply -->
+
+			</div><!-- /.comment-entry -->
+		</div><!-- /comment-container -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1 clearfix highlander-comment" id="li-comment-27512">
+		<div class="comment-container">
+							<div class="avatar-holder">
+					<img alt='' src='https://2.gravatar.com/avatar/27e14a3581bd89e6fd7cda2bfc8de3a8?s=50&#038;d=identicon&#038;r=G' class='avatar avatar-50' height='50' width='50' />
+				</div><!-- /.avatar-holder -->
+			
+			<div class="comment-entry"	id="comment-27512">
+
+				<div class="comment-head">
+					<span class="name">Kween Baker</span>
+											<span class="date"><a href="https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/#comment-27512" title="Permalink">5 August 2015 at 23:44</a></span>
+						<span class="edit"></span>
+									</div><!-- /.comment-head -->
+
+				
+				<div class="comment-text">
+					<p>Hi Blog, I took the RHCSA exam today and got a 0.  All questions were answered.  As i completed each task on the system,  I checked off the radio button for each answer and went on the next question.  I completed within the time alloted I was confident I&#8217;d walk away with 100% or somewhere near.  Even the freebies were answered.  </p>
+<p>Can anyone say if the answers are also copy / pasted somewhere else, in addition to completing each tasks ?</p>
+				</div><!-- /.comment-text -->
+
+				<div class="reply">
+					<a rel='nofollow' class='comment-reply-link' href='https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/?replytocom=27512#respond' onclick='return addComment.moveForm( "comment-27512", "27512", "respond", "1912" )' aria-label='Reply to Kween Baker'>Reply</a>				</div><!-- /.reply -->
+
+			</div><!-- /.comment-entry -->
+		</div><!-- /comment-container -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1 clearfix highlander-comment" id="li-comment-27520">
+		<div class="comment-container">
+							<div class="avatar-holder">
+					<img alt='' src='https://2.gravatar.com/avatar/27e14a3581bd89e6fd7cda2bfc8de3a8?s=50&#038;d=identicon&#038;r=G' class='avatar avatar-50' height='50' width='50' />
+				</div><!-- /.avatar-holder -->
+			
+			<div class="comment-entry"	id="comment-27520">
+
+				<div class="comment-head">
+					<span class="name">JKB</span>
+											<span class="date"><a href="https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/#comment-27520" title="Permalink">6 August 2015 at 12:40</a></span>
+						<span class="edit"></span>
+									</div><!-- /.comment-head -->
+
+				
+				<div class="comment-text">
+					<p>Always remember this pitfall:</p>
+<p>Reboot a few times and recheck everything you have finished so far. Your work is reviewed after a reboot anyway, so you should make sure your changes survive a reboot. The sooner you find a problem, the sooner you will be able to solve it.</p>
+<p>After researching, I fell to the reboot pitfall.  Thanks everybody.</p>
+<p>JKB</p>
+				</div><!-- /.comment-text -->
+
+				<div class="reply">
+					<a rel='nofollow' class='comment-reply-link' href='https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/?replytocom=27520#respond' onclick='return addComment.moveForm( "comment-27520", "27520", "respond", "1912" )' aria-label='Reply to JKB'>Reply</a>				</div><!-- /.reply -->
+
+			</div><!-- /.comment-entry -->
+		</div><!-- /comment-container -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1 clearfix highlander-comment" id="li-comment-28851">
+		<div class="comment-container">
+							<div class="avatar-holder">
+					<img alt='' src='https://1.gravatar.com/avatar/741589fd6b80d478beb7fe0235a948d5?s=50&#038;d=identicon&#038;r=G' class='avatar avatar-50' height='50' width='50' />
+				</div><!-- /.avatar-holder -->
+			
+			<div class="comment-entry"	id="comment-28851">
+
+				<div class="comment-head">
+					<span class="name"><a href='http://n/a' rel='external nofollow' class='url'>thinkwell</a></span>
+											<span class="date"><a href="https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/#comment-28851" title="Permalink">17 October 2015 at 20:58</a></span>
+						<span class="edit"></span>
+									</div><!-- /.comment-head -->
+
+				
+				<div class="comment-text">
+					<p>first of all i would like to say congrats.pliz help me wth anything that u can assist with in terms of exams.quastions or anything</p>
+				</div><!-- /.comment-text -->
+
+				<div class="reply">
+					<a rel='nofollow' class='comment-reply-link' href='https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/?replytocom=28851#respond' onclick='return addComment.moveForm( "comment-28851", "28851", "respond", "1912" )' aria-label='Reply to thinkwell'>Reply</a>				</div><!-- /.reply -->
+
+			</div><!-- /.comment-entry -->
+		</div><!-- /comment-container -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1 clearfix highlander-comment" id="li-comment-29260">
+		<div class="comment-container">
+							<div class="avatar-holder">
+					<img alt='' src='https://1.gravatar.com/avatar/4b565a3a1391e11ee3f52e609f211e02?s=50&#038;d=identicon&#038;r=G' class='avatar avatar-50' height='50' width='50' />
+				</div><!-- /.avatar-holder -->
+			
+			<div class="comment-entry"	id="comment-29260">
+
+				<div class="comment-head">
+					<span class="name">Rovshan Pashayev</span>
+											<span class="date"><a href="https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/#comment-29260" title="Permalink">7 November 2015 at 21:21</a></span>
+						<span class="edit"></span>
+									</div><!-- /.comment-head -->
+
+				
+				<div class="comment-text">
+					<p>Hi,</p>
+<p>I wanna pass RHCSA and reading &#8220;PDFs&#8221; from RH documentation page; System Admin, Network, Security, SELinux etc. Am I doing right? I mean should I waste time for them?<br />
+But must say I love reading them, so interesting.</p>
+<p>Thanks.</p>
+				</div><!-- /.comment-text -->
+
+				<div class="reply">
+					<a rel='nofollow' class='comment-reply-link' href='https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/?replytocom=29260#respond' onclick='return addComment.moveForm( "comment-29260", "29260", "respond", "1912" )' aria-label='Reply to Rovshan Pashayev'>Reply</a>				</div><!-- /.reply -->
+
+			</div><!-- /.comment-entry -->
+		</div><!-- /comment-container -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1 clearfix highlander-comment" id="li-comment-30303">
+		<div class="comment-container">
+							<div class="avatar-holder">
+					<img alt='' src='https://i0.wp.com/graph.facebook.com/v2.2/10156412569680134/picture?q=type%3Dlarge%26_md5%3Df4d9743973bfb70cbe2a211049880c43&#038;resize=50%2C50' class='avatar avatar-50' height='50' width='50' />
+				</div><!-- /.avatar-holder -->
+			
+			<div class="comment-entry"	id="comment-30303">
+
+				<div class="comment-head">
+					<span class="name"><a href='https://www.facebook.com/app_scoped_user_id/10156412569680134/' rel='external nofollow' class='url'>Muhammad Asif Shabbir</a></span>
+											<span class="date"><a href="https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/#comment-30303" title="Permalink">4 January 2016 at 20:29</a></span>
+						<span class="edit"></span>
+									</div><!-- /.comment-head -->
+
+				
+				<div class="comment-text">
+					<p>1: I am preparing for rhcsa ,I wonder if you can just provide us with some sample questions. not exactly what you saw in the exams, but just some rough idea. that will help me under stand , the paper before attempting it.</p>
+<p>2: Does RHCSA paper is also tough like RHCE, as I have seen the course outline and it appears to me that rhcsa should not be  a big deal , in terms of TIME and complexity.</p>
+<p>I would appreciate your response in this regards</p>
+				</div><!-- /.comment-text -->
+
+				<div class="reply">
+					<a rel='nofollow' class='comment-reply-link' href='https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/?replytocom=30303#respond' onclick='return addComment.moveForm( "comment-30303", "30303", "respond", "1912" )' aria-label='Reply to Muhammad Asif Shabbir'>Reply</a>				</div><!-- /.reply -->
+
+			</div><!-- /.comment-entry -->
+		</div><!-- /comment-container -->
+<ul class="children">
+	<li class="comment byuser comment-author-remibergsma bypostauthor even depth-2 clearfix highlander-comment" id="li-comment-31464">
+		<div class="comment-container">
+							<div class="avatar-holder">
+					<img alt='' src='https://0.gravatar.com/avatar/674bc68c51b45bb00d18d9d9314456fa?s=50&#038;d=identicon&#038;r=G' class='avatar avatar-50' height='50' width='50' />
+				</div><!-- /.avatar-holder -->
+			
+			<div class="comment-entry"	id="comment-31464">
+
+				<div class="comment-head">
+					<span class="name"><a href='http://blog.remibergsma.com' rel='external nofollow' class='url'>Remi Bergsma</a></span>
+											<span class="date"><a href="https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/#comment-31464" title="Permalink">3 July 2016 at 11:08</a></span>
+						<span class="edit"></span>
+									</div><!-- /.comment-head -->
+
+				
+				<div class="comment-text">
+					<p>As for 1: I&#8217;d recommend taking a course or study a book. 2: It may not be complex, but it&#8217;s still a lot of work so time-wise still a challenge 😉 Good luck!</p>
+				</div><!-- /.comment-text -->
+
+				<div class="reply">
+					<a rel='nofollow' class='comment-reply-link' href='https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/?replytocom=31464#respond' onclick='return addComment.moveForm( "comment-31464", "31464", "respond", "1912" )' aria-label='Reply to Remi Bergsma'>Reply</a>				</div><!-- /.reply -->
+
+			</div><!-- /.comment-entry -->
+		</div><!-- /comment-container -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1 clearfix highlander-comment" id="li-comment-30733">
+		<div class="comment-container">
+							<div class="avatar-holder">
+					<img alt='' src='https://2.gravatar.com/avatar/bb3617b917235c726c4db87ca4e9232b?s=50&#038;d=identicon&#038;r=G' class='avatar avatar-50' height='50' width='50' />
+				</div><!-- /.avatar-holder -->
+			
+			<div class="comment-entry"	id="comment-30733">
+
+				<div class="comment-head">
+					<span class="name">sobars kalamkar</span>
+											<span class="date"><a href="https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/#comment-30733" title="Permalink">18 February 2016 at 15:18</a></span>
+						<span class="edit"></span>
+									</div><!-- /.comment-head -->
+
+				
+				<div class="comment-text">
+					<p>Hi,</p>
+<p> In RHCE exam ,I solved each and every Question and crossed verified all answers three times which was absolutely correct and i also rebooted system two times,my all answers was correct,but I do not know how i get only 234 marks?</p>
+				</div><!-- /.comment-text -->
+
+				<div class="reply">
+					<a rel='nofollow' class='comment-reply-link' href='https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/?replytocom=30733#respond' onclick='return addComment.moveForm( "comment-30733", "30733", "respond", "1912" )' aria-label='Reply to sobars kalamkar'>Reply</a>				</div><!-- /.reply -->
+
+			</div><!-- /.comment-entry -->
+		</div><!-- /comment-container -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1 clearfix highlander-comment" id="li-comment-30916">
+		<div class="comment-container">
+							<div class="avatar-holder">
+					<img alt='' src='https://i0.wp.com/graph.facebook.com/v2.2/992100577550010/picture?q=type%3Dlarge%26_md5%3Dceb0cf122bb276e603a280ebcdb471d3&#038;resize=50%2C50' class='avatar avatar-50' height='50' width='50' />
+				</div><!-- /.avatar-holder -->
+			
+			<div class="comment-entry"	id="comment-30916">
+
+				<div class="comment-head">
+					<span class="name"><a href='https://www.facebook.com/app_scoped_user_id/992100577550010/' rel='external nofollow' class='url'>Kasthuri Rengan Sampathkumar</a></span>
+											<span class="date"><a href="https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/#comment-30916" title="Permalink">14 March 2016 at 16:18</a></span>
+						<span class="edit"></span>
+									</div><!-- /.comment-head -->
+
+				
+				<div class="comment-text">
+					<p>hi all,<br />
+I got zero in RHCE paper it will be helpful if somebody helps me out what mistake was done in this paper there is no possibility of getting zero in this paper</p>
+				</div><!-- /.comment-text -->
+
+				<div class="reply">
+					<a rel='nofollow' class='comment-reply-link' href='https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/?replytocom=30916#respond' onclick='return addComment.moveForm( "comment-30916", "30916", "respond", "1912" )' aria-label='Reply to Kasthuri Rengan Sampathkumar'>Reply</a>				</div><!-- /.reply -->
+
+			</div><!-- /.comment-entry -->
+		</div><!-- /comment-container -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1 clearfix highlander-comment" id="li-comment-31284">
+		<div class="comment-container">
+							<div class="avatar-holder">
+					<img alt='' src='https://0.gravatar.com/avatar/f759a4e9cd7a68317db5c98866312314?s=50&#038;d=identicon&#038;r=G' class='avatar avatar-50' height='50' width='50' />
+				</div><!-- /.avatar-holder -->
+			
+			<div class="comment-entry"	id="comment-31284">
+
+				<div class="comment-head">
+					<span class="name"><a href='http://bagful.academy/' rel='external nofollow' class='url'>Red Hat Training</a></span>
+											<span class="date"><a href="https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/#comment-31284" title="Permalink">22 May 2016 at 16:59</a></span>
+						<span class="edit"></span>
+									</div><!-- /.comment-head -->
+
+				
+				<div class="comment-text">
+					<p>Nice Post</p>
+				</div><!-- /.comment-text -->
+
+				<div class="reply">
+					<a rel='nofollow' class='comment-reply-link' href='https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/?replytocom=31284#respond' onclick='return addComment.moveForm( "comment-31284", "31284", "respond", "1912" )' aria-label='Reply to Red Hat Training'>Reply</a>				</div><!-- /.reply -->
+
+			</div><!-- /.comment-entry -->
+		</div><!-- /comment-container -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1 clearfix highlander-comment" id="li-comment-31293">
+		<div class="comment-container">
+							<div class="avatar-holder">
+					<img alt='' src='https://2.gravatar.com/avatar/bd9a84b712bf6ac36ff94771f29444a3?s=50&#038;d=identicon&#038;r=G' class='avatar avatar-50' height='50' width='50' />
+				</div><!-- /.avatar-holder -->
+			
+			<div class="comment-entry"	id="comment-31293">
+
+				<div class="comment-head">
+					<span class="name">Manish Tiwari</span>
+											<span class="date"><a href="https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/#comment-31293" title="Permalink">23 May 2016 at 15:35</a></span>
+						<span class="edit"></span>
+									</div><!-- /.comment-head -->
+
+				
+				<div class="comment-text">
+					<p>Hi its my bad luck i didnt able to clear my RHCE exam ..i got 206 marks. I am having problem in configuring samba and nfs .Can anyone help me out on these two topics as how to approach on these two topics?</p>
+				</div><!-- /.comment-text -->
+
+				<div class="reply">
+					<a rel='nofollow' class='comment-reply-link' href='https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/?replytocom=31293#respond' onclick='return addComment.moveForm( "comment-31293", "31293", "respond", "1912" )' aria-label='Reply to Manish Tiwari'>Reply</a>				</div><!-- /.reply -->
+
+			</div><!-- /.comment-entry -->
+		</div><!-- /comment-container -->
+<ul class="children">
+	<li class="comment odd alt depth-2 clearfix highlander-comment" id="li-comment-31898">
+		<div class="comment-container">
+							<div class="avatar-holder">
+					<img alt='' src='https://1.gravatar.com/avatar/7939249ea68746ccf121e8af2af4dea3?s=50&#038;d=identicon&#038;r=G' class='avatar avatar-50' height='50' width='50' />
+				</div><!-- /.avatar-holder -->
+			
+			<div class="comment-entry"	id="comment-31898">
+
+				<div class="comment-head">
+					<span class="name">Al Mamun</span>
+											<span class="date"><a href="https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/#comment-31898" title="Permalink">28 October 2016 at 21:02</a></span>
+						<span class="edit"></span>
+									</div><!-- /.comment-head -->
+
+				
+				<div class="comment-text">
+					<p>Same here. I got 206; dont know why server1 was neither responding nor rebooting. BTW, how you felt after getting the score!</p>
+				</div><!-- /.comment-text -->
+
+				<div class="reply">
+					<a rel='nofollow' class='comment-reply-link' href='https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/?replytocom=31898#respond' onclick='return addComment.moveForm( "comment-31898", "31898", "respond", "1912" )' aria-label='Reply to Al Mamun'>Reply</a>				</div><!-- /.reply -->
+
+			</div><!-- /.comment-entry -->
+		</div><!-- /comment-container -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1 clearfix highlander-comment" id="li-comment-31895">
+		<div class="comment-container">
+							<div class="avatar-holder">
+					<img alt='' src='https://0.gravatar.com/avatar/9da51b2742a4965e74be51d8053cfd3a?s=50&#038;d=identicon&#038;r=G' class='avatar avatar-50' height='50' width='50' />
+				</div><!-- /.avatar-holder -->
+			
+			<div class="comment-entry"	id="comment-31895">
+
+				<div class="comment-head">
+					<span class="name">Rachita</span>
+											<span class="date"><a href="https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/#comment-31895" title="Permalink">27 October 2016 at 11:37</a></span>
+						<span class="edit"></span>
+									</div><!-- /.comment-head -->
+
+				
+				<div class="comment-text">
+					<p>Hi, I gave RHCSA exam yesterday.After reboot vm comes up and i checked all things ,all are fine.after that, i reboot again and login with root and it shows login incorrect.What happen to my vm and will my all questions are evaluated or not?? Plz reply&#8230;&#8230;&#8230;</p>
+				</div><!-- /.comment-text -->
+
+				<div class="reply">
+					<a rel='nofollow' class='comment-reply-link' href='https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/?replytocom=31895#respond' onclick='return addComment.moveForm( "comment-31895", "31895", "respond", "1912" )' aria-label='Reply to Rachita'>Reply</a>				</div><!-- /.reply -->
+
+			</div><!-- /.comment-entry -->
+		</div><!-- /comment-container -->
+</li><!-- #comment-## -->
+	<li class="comment byuser comment-author-oscar214 odd alt thread-even depth-1 clearfix highlander-comment" id="li-comment-31946">
+		<div class="comment-container">
+							<div class="avatar-holder">
+					<img alt='' src='https://1.gravatar.com/avatar/4504e09c1aa66005c2e7b75785a8b536?s=50&#038;d=identicon&#038;r=G' class='avatar avatar-50' height='50' width='50' />
+				</div><!-- /.avatar-holder -->
+			
+			<div class="comment-entry"	id="comment-31946">
+
+				<div class="comment-head">
+					<span class="name">BigODFW</span>
+											<span class="date"><a href="https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/#comment-31946" title="Permalink">15 November 2016 at 03:08</a></span>
+						<span class="edit"></span>
+									</div><!-- /.comment-head -->
+
+				
+				<div class="comment-text">
+					<p>Thank you for your tips.   I just not started studying for the rhcsa exam.  I am starting to set up a test bed at home.  i wanted to know when taking the actual exam do you have to install RHEL 7 from scratch ? also do you have to install kvm from scratch ?</p>
+				</div><!-- /.comment-text -->
+
+				<div class="reply">
+					<a rel='nofollow' class='comment-reply-link' href='https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/?replytocom=31946#respond' onclick='return addComment.moveForm( "comment-31946", "31946", "respond", "1912" )' aria-label='Reply to BigODFW'>Reply</a>				</div><!-- /.reply -->
+
+			</div><!-- /.comment-entry -->
+		</div><!-- /comment-container -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1 clearfix highlander-comment" id="li-comment-32038">
+		<div class="comment-container">
+							<div class="avatar-holder">
+					<img alt='' src='https://2.gravatar.com/avatar/e142b63e21a78daf409946997a8c9110?s=50&#038;d=identicon&#038;r=G' class='avatar avatar-50' height='50' width='50' />
+				</div><!-- /.avatar-holder -->
+			
+			<div class="comment-entry"	id="comment-32038">
+
+				<div class="comment-head">
+					<span class="name"><a href='http://www.be-practical.com/' rel='external nofollow' class='url'>akshay kumar</a></span>
+											<span class="date"><a href="https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/#comment-32038" title="Permalink">14 December 2016 at 08:02</a></span>
+						<span class="edit"></span>
+									</div><!-- /.comment-head -->
+
+				
+				<div class="comment-text">
+					<p>Nice article<br />
+Thanks for sharing the informative blog.</p>
+				</div><!-- /.comment-text -->
+
+				<div class="reply">
+					<a rel='nofollow' class='comment-reply-link' href='https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/?replytocom=32038#respond' onclick='return addComment.moveForm( "comment-32038", "32038", "respond", "1912" )' aria-label='Reply to akshay kumar'>Reply</a>				</div><!-- /.reply -->
+
+			</div><!-- /.comment-entry -->
+		</div><!-- /comment-container -->
+</li><!-- #comment-## -->
+	<li class="comment byuser comment-author-bepracticalweb odd alt thread-even depth-1 clearfix highlander-comment" id="li-comment-32129">
+		<div class="comment-container">
+							<div class="avatar-holder">
+					<img alt='' src='https://2.gravatar.com/avatar/e142b63e21a78daf409946997a8c9110?s=50&#038;d=identicon&#038;r=G' class='avatar avatar-50' height='50' width='50' />
+				</div><!-- /.avatar-holder -->
+			
+			<div class="comment-entry"	id="comment-32129">
+
+				<div class="comment-head">
+					<span class="name"><a href='http://bepracticalweb.wordpress.com' rel='external nofollow' class='url'>Be-practical</a></span>
+											<span class="date"><a href="https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/#comment-32129" title="Permalink">3 January 2017 at 08:14</a></span>
+						<span class="edit"></span>
+									</div><!-- /.comment-head -->
+
+				
+				<div class="comment-text">
+					<p><a href="http://be-practical.com/" rel="nofollow">Nice article</a><br />
+Thanks for sharing the informative blog.</p>
+				</div><!-- /.comment-text -->
+
+				<div class="reply">
+					<a rel='nofollow' class='comment-reply-link' href='https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/?replytocom=32129#respond' onclick='return addComment.moveForm( "comment-32129", "32129", "respond", "1912" )' aria-label='Reply to Be-practical'>Reply</a>				</div><!-- /.reply -->
+
+			</div><!-- /.comment-entry -->
+		</div><!-- /comment-container -->
+</li><!-- #comment-## -->
+			</ol>
+			<div class="comment-navigation">
+				<div class="fl">
+									</div>
+				<div class="fr">
+									</div>
+			</div>
+
+		</div><!-- /#comments -->
+	
+	
+
+<div id="comment-form" class="clearfix">
+		<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">What do you think? <small><a rel="nofollow" id="cancel-comment-reply-link" href="/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://blog.remibergsma.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+				<input type="hidden" id="highlander_comment_nonce" name="highlander_comment_nonce" value="0465fbe5c7" /><input type="hidden" name="_wp_http_referer" value="/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/" />
+<input type="hidden" name="hc_post_as" id="hc_post_as" value="guest" />
+
+<div class="comment-form-field comment-textarea">
+	<label for="comment">Enter your comment here...</label>
+	<div id="comment-form-comment"><textarea id="comment" name="comment" title="Enter your comment here..."></textarea></div>
+</div>
+
+<div id="comment-form-identity">
+	<div id="comment-form-nascar">
+		<p>Fill in your details below or click an icon to log in:</p>
+		<ul>
+			<li class="selected" style="display:none;">
+				<a href="#comment-form-guest" id="postas-guest" class="nascar-signin-link"
+                   title="Login via Guest">
+									</a>
+			</li>
+			<li>
+				<a href="#comment-form-load-service:WordPress.com" id="postas-wordpress" class="nascar-signin-link"
+                   title="Login via WordPress.com">
+					<svg xmlns="http://www.w3.org/2000/svg" role="presentation" viewBox="0 0 24 24" ><rect x="0" fill="none" width="24" height="24"/><g><path fill="#0087be" d="M12.158 12.786l-2.698 7.84c.806.236 1.657.365 2.54.365 1.047 0 2.05-.18 2.986-.51-.024-.037-.046-.078-.065-.123l-2.762-7.57zM3.008 12c0 3.56 2.07 6.634 5.068 8.092L3.788 8.342c-.5 1.117-.78 2.354-.78 3.658zm15.06-.454c0-1.112-.398-1.88-.74-2.48-.456-.74-.883-1.368-.883-2.11 0-.825.627-1.595 1.51-1.595.04 0 .078.006.116.008-1.598-1.464-3.73-2.36-6.07-2.36-3.14 0-5.904 1.613-7.512 4.053.21.008.41.012.58.012.94 0 2.395-.114 2.395-.114.484-.028.54.684.057.74 0 0-.487.058-1.03.086l3.275 9.74 1.968-5.902-1.4-3.838c-.485-.028-.944-.085-.944-.085-.486-.03-.43-.77.056-.742 0 0 1.484.114 2.368.114.94 0 2.397-.114 2.397-.114.486-.028.543.684.058.74 0 0-.488.058-1.03.086l3.25 9.665.897-2.997c.456-1.17.684-2.137.684-2.907zm1.82-3.86c.04.286.06.593.06.924 0 .912-.17 1.938-.683 3.22l-2.746 7.94c2.672-1.558 4.47-4.454 4.47-7.77 0-1.564-.4-3.033-1.1-4.314zM12 22C6.486 22 2 17.514 2 12S6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></g></svg>				</a>
+			</li>
+			<li>
+			<li>
+				<a href="#comment-form-load-service:Twitter" id="postas-twitter" class="nascar-signin-link"
+                   title="Login via Twitter">
+					<svg xmlns="http://www.w3.org/2000/svg" role="presentation" viewBox="0 0 24 24" ><rect x="0" fill="none" width="24" height="24"/><g><path fill="#1DA1F2" d="M22.23 5.924c-.736.326-1.527.547-2.357.646.847-.508 1.498-1.312 1.804-2.27-.793.47-1.67.812-2.606.996C18.325 4.498 17.258 4 16.078 4c-2.266 0-4.103 1.837-4.103 4.103 0 .322.036.635.106.935-3.41-.17-6.433-1.804-8.457-4.287-.353.607-.556 1.312-.556 2.064 0 1.424.724 2.68 1.825 3.415-.673-.022-1.305-.207-1.86-.514v.052c0 1.988 1.415 3.647 3.293 4.023-.344.095-.707.145-1.08.145-.265 0-.522-.026-.773-.074.522 1.63 2.038 2.817 3.833 2.85-1.404 1.1-3.174 1.757-5.096 1.757-.332 0-.66-.02-.98-.057 1.816 1.164 3.973 1.843 6.29 1.843 7.547 0 11.675-6.252 11.675-11.675 0-.178-.004-.355-.012-.53.802-.578 1.497-1.3 2.047-2.124z"/></g></svg>				</a>
+			</li>
+			<li>
+				<a href="#comment-form-load-service:Facebook" id="postas-facebook" class="nascar-signin-link"
+                   title="Login via Facebook">
+					<svg xmlns="http://www.w3.org/2000/svg" role="presentation" viewBox="0 0 24 24" ><rect x="0" fill="none" width="24" height="24"/><g><path fill="#3B5998" d="M20.007 3H3.993C3.445 3 3 3.445 3 3.993v16.013c0 .55.445.994.993.994h8.62v-6.97H10.27V11.31h2.346V9.31c0-2.325 1.42-3.59 3.494-3.59.993 0 1.847.073 2.096.106v2.43h-1.438c-1.128 0-1.346.537-1.346 1.324v1.734h2.69l-.35 2.717h-2.34V21h4.587c.548 0 .993-.445.993-.993V3.993c0-.548-.445-.993-.993-.993z"/></g></svg>				</a>
+			</li>
+		</ul>
+	</div>
+
+	<div id="comment-form-guest" class="comment-form-service selected">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+<a href="https://gravatar.com/site/signup/" target="_blank">				<img src="https://1.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=25&amp;d=identicon&amp;forcedefault=y&amp;r=G" alt="Gravatar" width="25" class="no-grav" />
+</a>			</div>
+
+				<div class="comment-form-fields">
+				<div class="comment-form-field comment-form-email">
+					<label for="email">Email <span class="required">(required)</span> <span class="nopublish">(Address never made public)</span></label>
+					<div class="comment-form-input"><input id="email" name="email" type="email" value="" /></div>
+				</div>
+				<div class="comment-form-field comment-form-author">
+					<label for="author">Name <span class="required">(required)</span></label>
+					<div class="comment-form-input"><input id="author" name="author" type="text" value="" /></div>
+				</div>
+				<div class="comment-form-field comment-form-url">
+					<label for="url">Website</label>
+					<div class="comment-form-input"><input id="url" name="url" type="url" value="" /></div>
+				</div>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-wordpress" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="https://1.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=25&amp;d=identicon&amp;forcedefault=y&amp;r=G" alt="WordPress.com Logo" width="25" class="no-grav" />
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="wp_avatar" id="wordpress-avatar" class="comment-meta-wordpress" value="" />
+				<input type="hidden" name="wp_user_id" id="wordpress-user_id" class="comment-meta-wordpress" value="" />
+				<input type="hidden" name="wp_access_token" id="wordpress-access_token" class="comment-meta-wordpress" value="" />
+						<p class="comment-form-posting-as pa-wordpress">
+			<strong></strong>
+			You are commenting using your WordPress.com account.			<span class="comment-form-log-out">
+				(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'wordpress' );">Log&nbsp;Out</a>&nbsp;/&nbsp;
+				<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)
+			</span>
+			<span class="pa-icon"><svg xmlns="http://www.w3.org/2000/svg" role="presentation" viewBox="0 0 24 24" ><rect x="0" fill="none" width="24" height="24"/><g><path fill="#0087be" d="M12.158 12.786l-2.698 7.84c.806.236 1.657.365 2.54.365 1.047 0 2.05-.18 2.986-.51-.024-.037-.046-.078-.065-.123l-2.762-7.57zM3.008 12c0 3.56 2.07 6.634 5.068 8.092L3.788 8.342c-.5 1.117-.78 2.354-.78 3.658zm15.06-.454c0-1.112-.398-1.88-.74-2.48-.456-.74-.883-1.368-.883-2.11 0-.825.627-1.595 1.51-1.595.04 0 .078.006.116.008-1.598-1.464-3.73-2.36-6.07-2.36-3.14 0-5.904 1.613-7.512 4.053.21.008.41.012.58.012.94 0 2.395-.114 2.395-.114.484-.028.54.684.057.74 0 0-.487.058-1.03.086l3.275 9.74 1.968-5.902-1.4-3.838c-.485-.028-.944-.085-.944-.085-.486-.03-.43-.77.056-.742 0 0 1.484.114 2.368.114.94 0 2.397-.114 2.397-.114.486-.028.543.684.058.74 0 0-.488.058-1.03.086l3.25 9.665.897-2.997c.456-1.17.684-2.137.684-2.907zm1.82-3.86c.04.286.06.593.06.924 0 .912-.17 1.938-.683 3.22l-2.746 7.94c2.672-1.558 4.47-4.454 4.47-7.77 0-1.564-.4-3.033-1.1-4.314zM12 22C6.486 22 2 17.514 2 12S6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></g></svg></span>
+		</p>
+					</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-googleplus" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="https://1.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=25&amp;d=identicon&amp;forcedefault=y&amp;r=G" alt="Google+ photo" width="25" class="no-grav" />
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="googleplus_avatar" id="googleplus-avatar" class="comment-meta-googleplus" value="" />
+				<input type="hidden" name="googleplus_user_id" id="googleplus-user_id" class="comment-meta-googleplus" value="" />
+				<input type="hidden" name="googleplus_access_token" id="googleplus-access_token" class="comment-meta-googleplus" value="" />
+						<p class="comment-form-posting-as pa-googleplus">
+			<strong></strong>
+			You are commenting using your Google+ account.			<span class="comment-form-log-out">
+				(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'googleplus' );">Log&nbsp;Out</a>&nbsp;/&nbsp;
+				<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)
+			</span>
+			<span class="pa-icon"><svg xmlns="http://www.w3.org/2000/svg" role="presentation" x="0px" y="0px" viewBox="0 0 60 60" ><path fill="#519bf7" d="M56.3,30c0,-1.6 -0.2,-3.4 -0.6,-5h-3.1H42.2H30v10.6h14.8C44,39.3 42,42 39.1,43.9l8.8,6.8C53,46 56.3,39 56.3,30z" /><path fill="#3db366" d="M30,57.5c6.7,0 13.1,-2.4 17.9,-6.8l-8.8,-6.8c-2.5,1.6 -5.6,2.4 -9.1,2.4c-7.2,0 -13.3,-4.7 -15.4,-11.2l-9.3,7.1C9.8,51.3 19.1,57.5 30,57.5z" /><path fill="#fdc600" d="M5.3,42.2l9.3,-7.1c-0.5,-1.6 -0.8,-3.3 -0.8,-5.1s0.3,-3.5 0.8,-5.1l-9.3,-7.1C3.5,21.5 2.5,25.6 2.5,30S3.5,38.5 5.3,42.2z" /><path fill="#f15b44" d="M40.1,17.4l8,-8C43.3,5.1 37,2.5 30,2.5C19.1,2.5 9.8,8.7 5.3,17.8l9.3,7.1c2.1,-6.5 8.2,-11.1 15.4,-11.1C33.9,13.7 37.4,15.1 40.1,17.4z" /></svg></span>
+		</p>
+					</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-twitter" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="https://1.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=25&amp;d=identicon&amp;forcedefault=y&amp;r=G" alt="Twitter picture" width="25" class="no-grav" />
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="twitter_avatar" id="twitter-avatar" class="comment-meta-twitter" value="" />
+				<input type="hidden" name="twitter_user_id" id="twitter-user_id" class="comment-meta-twitter" value="" />
+				<input type="hidden" name="twitter_access_token" id="twitter-access_token" class="comment-meta-twitter" value="" />
+						<p class="comment-form-posting-as pa-twitter">
+			<strong></strong>
+			You are commenting using your Twitter account.			<span class="comment-form-log-out">
+				(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'twitter' );">Log&nbsp;Out</a>&nbsp;/&nbsp;
+				<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)
+			</span>
+			<span class="pa-icon"><svg xmlns="http://www.w3.org/2000/svg" role="presentation" viewBox="0 0 24 24" ><rect x="0" fill="none" width="24" height="24"/><g><path fill="#1DA1F2" d="M22.23 5.924c-.736.326-1.527.547-2.357.646.847-.508 1.498-1.312 1.804-2.27-.793.47-1.67.812-2.606.996C18.325 4.498 17.258 4 16.078 4c-2.266 0-4.103 1.837-4.103 4.103 0 .322.036.635.106.935-3.41-.17-6.433-1.804-8.457-4.287-.353.607-.556 1.312-.556 2.064 0 1.424.724 2.68 1.825 3.415-.673-.022-1.305-.207-1.86-.514v.052c0 1.988 1.415 3.647 3.293 4.023-.344.095-.707.145-1.08.145-.265 0-.522-.026-.773-.074.522 1.63 2.038 2.817 3.833 2.85-1.404 1.1-3.174 1.757-5.096 1.757-.332 0-.66-.02-.98-.057 1.816 1.164 3.973 1.843 6.29 1.843 7.547 0 11.675-6.252 11.675-11.675 0-.178-.004-.355-.012-.53.802-.578 1.497-1.3 2.047-2.124z"/></g></svg></span>
+		</p>
+					</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-facebook" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="https://1.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=25&amp;d=identicon&amp;forcedefault=y&amp;r=G" alt="Facebook photo" width="25" class="no-grav" />
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="fb_avatar" id="facebook-avatar" class="comment-meta-facebook" value="" />
+				<input type="hidden" name="fb_user_id" id="facebook-user_id" class="comment-meta-facebook" value="" />
+				<input type="hidden" name="fb_access_token" id="facebook-access_token" class="comment-meta-facebook" value="" />
+						<p class="comment-form-posting-as pa-facebook">
+			<strong></strong>
+			You are commenting using your Facebook account.			<span class="comment-form-log-out">
+				(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'facebook' );">Log&nbsp;Out</a>&nbsp;/&nbsp;
+				<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)
+			</span>
+			<span class="pa-icon"><svg xmlns="http://www.w3.org/2000/svg" role="presentation" viewBox="0 0 24 24" ><rect x="0" fill="none" width="24" height="24"/><g><path fill="#3B5998" d="M20.007 3H3.993C3.445 3 3 3.445 3 3.993v16.013c0 .55.445.994.993.994h8.62v-6.97H10.27V11.31h2.346V9.31c0-2.325 1.42-3.59 3.494-3.59.993 0 1.847.073 2.096.106v2.43h-1.438c-1.128 0-1.346.537-1.346 1.324v1.734h2.69l-.35 2.717h-2.34V21h4.587c.548 0 .993-.445.993-.993V3.993c0-.548-.445-.993-.993-.993z"/></g></svg></span>
+		</p>
+		w
+			</div>
+	
+		</div>
+	</div>
+
+
+	<div id="comment-form-load-service" class="comment-form-service">
+		<div class="comment-form-posting-as-cancel"><a href="javascript:HighlanderComments.cancelExternalWindow();">Cancel</a></div>
+		<p>Connecting to %s</p>
+	</div>
+
+</div>
+
+<script type="text/javascript">
+var highlander_expando_javascript = function(){
+	var input = document.createElement( 'input' ),
+	    comment = jQuery( '#comment' );
+
+	if ( 'placeholder' in input ) {
+		comment.attr( 'placeholder', jQuery( '.comment-textarea label' ).remove().text() );
+	}
+
+	// Expando Mode: start small, then auto-resize on first click + text length
+	jQuery( '#comment-form-identity' ).hide();
+	jQuery( '#comment-form-subscribe' ).hide();
+	jQuery( '#commentform .form-submit' ).hide();
+
+	comment.css( { 'height':'10px' } ).one( 'focus', function() {
+		var timer = setInterval( HighlanderComments.resizeCallback, 10 )
+		jQuery( this ).animate( { 'height': HighlanderComments.initialHeight } ).delay( 100 ).queue( function(n) { clearInterval( timer ); HighlanderComments.resizeCallback(); n(); } );
+		jQuery( '#comment-form-identity' ).slideDown();
+		jQuery( '#comment-form-subscribe' ).slideDown();
+		jQuery( '#commentform .form-submit' ).slideDown();
+	});
+}
+jQuery(document).ready( highlander_expando_javascript );
+</script>
+
+<div id="comment-form-subscribe">
+	<p class="comment-subscription-form"><input type="checkbox" name="subscribe" id="subscribe" value="subscribe" style="width: auto;"/> <label class="subscribe-label" id="subscribe-label" for="subscribe" style="display: inline;">Notify me of new comments via email.</label></p><p class="post-subscription-form"><input type="checkbox" name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto;"/> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog"  style="display: inline;">Notify me of new posts via email.</label></p></div>
+
+
+
+
+
+<p class="form-submit"><input name="submit" type="submit" id="comment-submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='1912' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="394663e76d" /></p>
+<input type="hidden" name="genseq" value="1526897958" />
+<p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="20"/></p>			</form>
+			</div><!-- #respond -->
+	<div style="clear: both"></div></div><!-- /#comment-form -->
+					
+
+	<div id="single-post-nav">
+		<ul class="pager">
+
+			
+							<li class="previous">
+					<span class="previous-page"><a href="https://blog.remibergsma.com/2013/08/31/managing-hundreds-of-servers-with-cfengine-and-git-full-control-over-configuration/" rel="prev" title="Managing hundreds of Linux servers with CFEngine and Git: full control over&nbsp;configuration"><i class="icon-chevron-left"></i>&nbspPrevious</a></span>				</li>
+			
+							<li class="next">
+				<span class="no-previous-page-link next-page"><a href="https://blog.remibergsma.com/2013/11/04/monitoring-disk-space-with-cfengine/" rel="next" title="Monitoring disk space with&nbsp;CFEngine">Next&nbsp;<i class="icon-chevron-right"></i></a></span>				</li>
+					</ul>
+	</div><!-- /#single-post-nav -->
+
+							</div><!-- /#main -->
+
+							<div id="sidebar" class="span4">
+	<div id="search-2" class="widget widget_search"><form role="search" method="get" id="searchform" action="https://blog.remibergsma.com/"><input type="text" value="Search..." name="s" id="s" /></form></div><div id="media_image-2" class="widget widget_media_image"><h4 class="Image widget-title">About me</h4><style>.widget.widget_media_image { overflow: hidden; }.widget.widget_media_image img { height: auto; max-width: 100%; }</style><a href="/about" class="" rel="" target=""><img width="100" height="144" src="https://remibergsma.files.wordpress.com/2012/10/remi_drawing_small.jpg?w=100" class="image wp-image-758 alignnone attachment-100x144 size-100x144" alt="Remi Bergsma" style="max-width: 100%; height: auto;" title="Remi Bergsma" srcset="https://remibergsma.files.wordpress.com/2012/10/remi_drawing_small.jpg?w=100 100w, https://remibergsma.files.wordpress.com/2012/10/remi_drawing_small.jpg?w=200 200w, https://remibergsma.files.wordpress.com/2012/10/remi_drawing_small.jpg?w=104 104w" sizes="(max-width: 100px) 100vw, 100px" data-attachment-id="758" data-permalink="https://blog.remibergsma.com/remi_drawing_small/" data-orig-file="https://remibergsma.files.wordpress.com/2012/10/remi_drawing_small.jpg" data-orig-size="700,1009" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;1349196335&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title="Remi_drawing_small" data-image-description="" data-medium-file="https://remibergsma.files.wordpress.com/2012/10/remi_drawing_small.jpg?w=208" data-large-file="https://remibergsma.files.wordpress.com/2012/10/remi_drawing_small.jpg?w=580" /></a></div><div id="blog-stats-2" class="widget widget_blog-stats"><h4 class="Blog Stats widget-title">Blog Stats</h4>		<ul>
+			<li>1,074,676 views</li>
+		</ul>
+		</div><div id="wp_tag_cloud-2" class="widget wp_widget_tag_cloud"><h4 class="Tag Cloud widget-title">Tag Cloud</h4><div style="overflow:hidden"><a href="https://blog.remibergsma.com/tag/annual-report/" class="tag-cloud-link tag-link-494176 tag-link-position-1" style="font-size: 8pt;" aria-label="annual report (2 items)">annual report</a>
+<a href="https://blog.remibergsma.com/tag/apple-2/" class="tag-cloud-link tag-link-3827646 tag-link-position-2" style="font-size: 12.245901639344pt;" aria-label="apple (6 items)">apple</a>
+<a href="https://blog.remibergsma.com/tag/arp/" class="tag-cloud-link tag-link-973674 tag-link-position-3" style="font-size: 9.3770491803279pt;" aria-label="arp (3 items)">arp</a>
+<a href="https://blog.remibergsma.com/tag/automation/" class="tag-cloud-link tag-link-44070 tag-link-position-4" style="font-size: 12.819672131148pt;" aria-label="automation (7 items)">automation</a>
+<a href="https://blog.remibergsma.com/tag/backup/" class="tag-cloud-link tag-link-5469 tag-link-position-5" style="font-size: 10.524590163934pt;" aria-label="backup (4 items)">backup</a>
+<a href="https://blog.remibergsma.com/tag/cable-management/" class="tag-cloud-link tag-link-491246 tag-link-position-6" style="font-size: 8pt;" aria-label="cable management (2 items)">cable management</a>
+<a href="https://blog.remibergsma.com/tag/centos/" class="tag-cloud-link tag-link-134600 tag-link-position-7" style="font-size: 11.44262295082pt;" aria-label="centos (5 items)">centos</a>
+<a href="https://blog.remibergsma.com/tag/certification/" class="tag-cloud-link tag-link-11198 tag-link-position-8" style="font-size: 11.44262295082pt;" aria-label="certification (5 items)">certification</a>
+<a href="https://blog.remibergsma.com/tag/cfengine/" class="tag-cloud-link tag-link-4772450 tag-link-position-9" style="font-size: 10.524590163934pt;" aria-label="cfengine (4 items)">cfengine</a>
+<a href="https://blog.remibergsma.com/tag/clocksource/" class="tag-cloud-link tag-link-18140207 tag-link-position-10" style="font-size: 8pt;" aria-label="clocksource (2 items)">clocksource</a>
+<a href="https://blog.remibergsma.com/tag/cloudstack-2/" class="tag-cloud-link tag-link-79102414 tag-link-position-11" style="font-size: 20.393442622951pt;" aria-label="cloudstack (35 items)">cloudstack</a>
+<a href="https://blog.remibergsma.com/tag/color/" class="tag-cloud-link tag-link-11835 tag-link-position-12" style="font-size: 8pt;" aria-label="color (2 items)">color</a>
+<a href="https://blog.remibergsma.com/tag/configuration-management/" class="tag-cloud-link tag-link-84714 tag-link-position-13" style="font-size: 11.44262295082pt;" aria-label="configuration management (5 items)">configuration management</a>
+<a href="https://blog.remibergsma.com/tag/data-center/" class="tag-cloud-link tag-link-78171 tag-link-position-14" style="font-size: 10.524590163934pt;" aria-label="data center (4 items)">data center</a>
+<a href="https://blog.remibergsma.com/tag/debian/" class="tag-cloud-link tag-link-428 tag-link-position-15" style="font-size: 10.524590163934pt;" aria-label="debian (4 items)">debian</a>
+<a href="https://blog.remibergsma.com/tag/devops/" class="tag-cloud-link tag-link-28070474 tag-link-position-16" style="font-size: 14.426229508197pt;" aria-label="devops (10 items)">devops</a>
+<a href="https://blog.remibergsma.com/tag/drbd/" class="tag-cloud-link tag-link-1291895 tag-link-position-17" style="font-size: 9.3770491803279pt;" aria-label="drbd (3 items)">drbd</a>
+<a href="https://blog.remibergsma.com/tag/exam/" class="tag-cloud-link tag-link-5216 tag-link-position-18" style="font-size: 10.524590163934pt;" aria-label="exam (4 items)">exam</a>
+<a href="https://blog.remibergsma.com/tag/fosdem/" class="tag-cloud-link tag-link-37966 tag-link-position-19" style="font-size: 10.524590163934pt;" aria-label="fosdem (4 items)">fosdem</a>
+<a href="https://blog.remibergsma.com/tag/git/" class="tag-cloud-link tag-link-209196 tag-link-position-20" style="font-size: 10.524590163934pt;" aria-label="git (4 items)">git</a>
+<a href="https://blog.remibergsma.com/tag/gnu-screen/" class="tag-cloud-link tag-link-1822330 tag-link-position-21" style="font-size: 8pt;" aria-label="gnu screen (2 items)">gnu screen</a>
+<a href="https://blog.remibergsma.com/tag/google-authenticator/" class="tag-cloud-link tag-link-51068372 tag-link-position-22" style="font-size: 8pt;" aria-label="google authenticator (2 items)">google authenticator</a>
+<a href="https://blog.remibergsma.com/tag/howto/" class="tag-cloud-link tag-link-1921 tag-link-position-23" style="font-size: 22pt;" aria-label="howto (49 items)">howto</a>
+<a href="https://blog.remibergsma.com/tag/iptables/" class="tag-cloud-link tag-link-391491 tag-link-position-24" style="font-size: 8pt;" aria-label="iptables (2 items)">iptables</a>
+<a href="https://blog.remibergsma.com/tag/keepalived/" class="tag-cloud-link tag-link-2832706 tag-link-position-25" style="font-size: 8pt;" aria-label="keepalived (2 items)">keepalived</a>
+<a href="https://blog.remibergsma.com/tag/keyboard/" class="tag-cloud-link tag-link-105984 tag-link-position-26" style="font-size: 8pt;" aria-label="keyboard (2 items)">keyboard</a>
+<a href="https://blog.remibergsma.com/tag/ldap/" class="tag-cloud-link tag-link-25345 tag-link-position-27" style="font-size: 9.3770491803279pt;" aria-label="LDAP (3 items)">LDAP</a>
+<a href="https://blog.remibergsma.com/tag/linux/" class="tag-cloud-link tag-link-610 tag-link-position-28" style="font-size: 9.3770491803279pt;" aria-label="linux (3 items)">linux</a>
+<a href="https://blog.remibergsma.com/tag/lpi/" class="tag-cloud-link tag-link-563797 tag-link-position-29" style="font-size: 9.3770491803279pt;" aria-label="LPI (3 items)">LPI</a>
+<a href="https://blog.remibergsma.com/tag/lvm/" class="tag-cloud-link tag-link-186680 tag-link-position-30" style="font-size: 8pt;" aria-label="LVM (2 items)">LVM</a>
+<a href="https://blog.remibergsma.com/tag/migration/" class="tag-cloud-link tag-link-1158 tag-link-position-31" style="font-size: 11.44262295082pt;" aria-label="migration (5 items)">migration</a>
+<a href="https://blog.remibergsma.com/tag/monitoring/" class="tag-cloud-link tag-link-111949 tag-link-position-32" style="font-size: 10.524590163934pt;" aria-label="monitoring (4 items)">monitoring</a>
+<a href="https://blog.remibergsma.com/tag/mountain-lion/" class="tag-cloud-link tag-link-577787 tag-link-position-33" style="font-size: 9.3770491803279pt;" aria-label="mountain lion (3 items)">mountain lion</a>
+<a href="https://blog.remibergsma.com/tag/move/" class="tag-cloud-link tag-link-113795 tag-link-position-34" style="font-size: 8pt;" aria-label="move (2 items)">move</a>
+<a href="https://blog.remibergsma.com/tag/mysql-2/" class="tag-cloud-link tag-link-35100804 tag-link-position-35" style="font-size: 13.967213114754pt;" aria-label="mysql (9 items)">mysql</a>
+<a href="https://blog.remibergsma.com/tag/networking/" class="tag-cloud-link tag-link-7426 tag-link-position-36" style="font-size: 14.426229508197pt;" aria-label="networking (10 items)">networking</a>
+<a href="https://blog.remibergsma.com/tag/nsx/" class="tag-cloud-link tag-link-545037 tag-link-position-37" style="font-size: 8pt;" aria-label="nsx (2 items)">nsx</a>
+<a href="https://blog.remibergsma.com/tag/one-liner/" class="tag-cloud-link tag-link-419712 tag-link-position-38" style="font-size: 8pt;" aria-label="one-liner (2 items)">one-liner</a>
+<a href="https://blog.remibergsma.com/tag/open-source/" class="tag-cloud-link tag-link-25 tag-link-position-39" style="font-size: 8pt;" aria-label="open source (2 items)">open source</a>
+<a href="https://blog.remibergsma.com/tag/openvpn/" class="tag-cloud-link tag-link-522919 tag-link-position-40" style="font-size: 12.819672131148pt;" aria-label="openvpn (7 items)">openvpn</a>
+<a href="https://blog.remibergsma.com/tag/openvswitch/" class="tag-cloud-link tag-link-59470194 tag-link-position-41" style="font-size: 9.3770491803279pt;" aria-label="openvswitch (3 items)">openvswitch</a>
+<a href="https://blog.remibergsma.com/tag/osx/" class="tag-cloud-link tag-link-1902 tag-link-position-42" style="font-size: 13.967213114754pt;" aria-label="osx (9 items)">osx</a>
+<a href="https://blog.remibergsma.com/tag/php/" class="tag-cloud-link tag-link-458 tag-link-position-43" style="font-size: 9.3770491803279pt;" aria-label="php (3 items)">php</a>
+<a href="https://blog.remibergsma.com/tag/processes/" class="tag-cloud-link tag-link-55794 tag-link-position-44" style="font-size: 8pt;" aria-label="processes (2 items)">processes</a>
+<a href="https://blog.remibergsma.com/tag/puppet/" class="tag-cloud-link tag-link-3548 tag-link-position-45" style="font-size: 10.524590163934pt;" aria-label="puppet (4 items)">puppet</a>
+<a href="https://blog.remibergsma.com/tag/rasclock/" class="tag-cloud-link tag-link-167447993 tag-link-position-46" style="font-size: 8pt;" aria-label="rasclock (2 items)">rasclock</a>
+<a href="https://blog.remibergsma.com/tag/raspberry-pi/" class="tag-cloud-link tag-link-49695267 tag-link-position-47" style="font-size: 13.967213114754pt;" aria-label="raspberry pi (9 items)">raspberry pi</a>
+<a href="https://blog.remibergsma.com/tag/red-hat/" class="tag-cloud-link tag-link-57767 tag-link-position-48" style="font-size: 9.3770491803279pt;" aria-label="Red Hat (3 items)">Red Hat</a>
+<a href="https://blog.remibergsma.com/tag/redundancy/" class="tag-cloud-link tag-link-96235 tag-link-position-49" style="font-size: 8pt;" aria-label="redundancy (2 items)">redundancy</a>
+<a href="https://blog.remibergsma.com/tag/replication/" class="tag-cloud-link tag-link-481477 tag-link-position-50" style="font-size: 10.524590163934pt;" aria-label="replication (4 items)">replication</a>
+<a href="https://blog.remibergsma.com/tag/restore/" class="tag-cloud-link tag-link-135462 tag-link-position-51" style="font-size: 8pt;" aria-label="restore (2 items)">restore</a>
+<a href="https://blog.remibergsma.com/tag/route/" class="tag-cloud-link tag-link-169863 tag-link-position-52" style="font-size: 9.3770491803279pt;" aria-label="route (3 items)">route</a>
+<a href="https://blog.remibergsma.com/tag/routing/" class="tag-cloud-link tag-link-431538 tag-link-position-53" style="font-size: 8pt;" aria-label="routing (2 items)">routing</a>
+<a href="https://blog.remibergsma.com/tag/rtc/" class="tag-cloud-link tag-link-59573 tag-link-position-54" style="font-size: 8pt;" aria-label="rtc (2 items)">rtc</a>
+<a href="https://blog.remibergsma.com/tag/security/" class="tag-cloud-link tag-link-801 tag-link-position-55" style="font-size: 12.245901639344pt;" aria-label="security (6 items)">security</a>
+<a href="https://blog.remibergsma.com/tag/sed/" class="tag-cloud-link tag-link-37293 tag-link-position-56" style="font-size: 8pt;" aria-label="sed (2 items)">sed</a>
+<a href="https://blog.remibergsma.com/tag/shell/" class="tag-cloud-link tag-link-43912 tag-link-position-57" style="font-size: 11.44262295082pt;" aria-label="shell (5 items)">shell</a>
+<a href="https://blog.remibergsma.com/tag/sles/" class="tag-cloud-link tag-link-108467 tag-link-position-58" style="font-size: 8pt;" aria-label="SLES (2 items)">SLES</a>
+<a href="https://blog.remibergsma.com/tag/ssh/" class="tag-cloud-link tag-link-49320 tag-link-position-59" style="font-size: 12.245901639344pt;" aria-label="ssh (6 items)">ssh</a>
+<a href="https://blog.remibergsma.com/tag/stats/" class="tag-cloud-link tag-link-7916 tag-link-position-60" style="font-size: 8pt;" aria-label="stats (2 items)">stats</a>
+<a href="https://blog.remibergsma.com/tag/storage/" class="tag-cloud-link tag-link-3386 tag-link-position-61" style="font-size: 9.3770491803279pt;" aria-label="storage (3 items)">storage</a>
+<a href="https://blog.remibergsma.com/tag/suse/" class="tag-cloud-link tag-link-1920 tag-link-position-62" style="font-size: 10.524590163934pt;" aria-label="SUSE (4 items)">SUSE</a>
+<a href="https://blog.remibergsma.com/tag/sysadmin/" class="tag-cloud-link tag-link-13505 tag-link-position-63" style="font-size: 8pt;" aria-label="sysadmin (2 items)">sysadmin</a>
+<a href="https://blog.remibergsma.com/tag/talk/" class="tag-cloud-link tag-link-739 tag-link-position-64" style="font-size: 16.606557377049pt;" aria-label="talk (16 items)">talk</a>
+<a href="https://blog.remibergsma.com/tag/terminal/" class="tag-cloud-link tag-link-16478 tag-link-position-65" style="font-size: 13.393442622951pt;" aria-label="terminal (8 items)">terminal</a>
+<a href="https://blog.remibergsma.com/tag/time/" class="tag-cloud-link tag-link-5087 tag-link-position-66" style="font-size: 8pt;" aria-label="time (2 items)">time</a>
+<a href="https://blog.remibergsma.com/tag/tunnelblick/" class="tag-cloud-link tag-link-1194876 tag-link-position-67" style="font-size: 8pt;" aria-label="tunnelblick (2 items)">tunnelblick</a>
+<a href="https://blog.remibergsma.com/tag/two-factor-authentication/" class="tag-cloud-link tag-link-1085242 tag-link-position-68" style="font-size: 8pt;" aria-label="two-factor authentication (2 items)">two-factor authentication</a>
+<a href="https://blog.remibergsma.com/tag/ubuntu/" class="tag-cloud-link tag-link-255 tag-link-position-69" style="font-size: 11.44262295082pt;" aria-label="ubuntu (5 items)">ubuntu</a>
+<a href="https://blog.remibergsma.com/tag/video/" class="tag-cloud-link tag-link-412 tag-link-position-70" style="font-size: 12.245901639344pt;" aria-label="video (6 items)">video</a>
+<a href="https://blog.remibergsma.com/tag/virtual-router/" class="tag-cloud-link tag-link-7737312 tag-link-position-71" style="font-size: 8pt;" aria-label="virtual router (2 items)">virtual router</a>
+<a href="https://blog.remibergsma.com/tag/vlan/" class="tag-cloud-link tag-link-1239649 tag-link-position-72" style="font-size: 8pt;" aria-label="VLAN (2 items)">VLAN</a>
+<a href="https://blog.remibergsma.com/tag/wordpress/" class="tag-cloud-link tag-link-33 tag-link-position-73" style="font-size: 8pt;" aria-label="wordpress (2 items)">wordpress</a>
+<a href="https://blog.remibergsma.com/tag/written-in-dutch/" class="tag-cloud-link tag-link-106785275 tag-link-position-74" style="font-size: 9.3770491803279pt;" aria-label="Written In Dutch (3 items)">Written In Dutch</a>
+<a href="https://blog.remibergsma.com/tag/xenserver/" class="tag-cloud-link tag-link-4433908 tag-link-position-75" style="font-size: 11.44262295082pt;" aria-label="xenserver (5 items)">xenserver</a></div></div><div id="top-posts-2" class="widget widget_top-posts"><h4 class="Top Posts &amp; Pages widget-title">Top posts</h4><ul>				<li>
+										<a href="https://blog.remibergsma.com/2012/03/04/howto-quickly-add-a-route-in-mac-osx/" class="bump-view" data-bump-view="tp">
+						HOWTO quickly add a route in Mac OSX					</a>
+									</li>
+							<li>
+										<a href="https://blog.remibergsma.com/2013/02/27/improving-openvpn-security-by-revoking-unneeded-certificates/" class="bump-view" data-bump-view="tp">
+						Improving OpenVPN security by revoking unneeded certificates					</a>
+									</li>
+							<li>
+										<a href="https://blog.remibergsma.com/2012/07/10/setting-locales-correctly-on-mac-osx-terminal-application/" class="bump-view" data-bump-view="tp">
+						Setting locales correctly on Mac OSX Terminal application					</a>
+									</li>
+							<li>
+										<a href="https://blog.remibergsma.com/2013/01/13/howto-connect-to-hosts-on-a-remote-network-using-openvpn-and-some-routing/" class="bump-view" data-bump-view="tp">
+						HOWTO connect to hosts on a remote network using OpenVPN and some routing					</a>
+									</li>
+							<li>
+										<a href="https://blog.remibergsma.com/2013/05/28/creating-a-multi-hop-ssh-tunnel-by-chaining-ssh-commands-and-using-a-jump-host/" class="bump-view" data-bump-view="tp">
+						Creating a multi hop SSH tunnel by chaining SSH commands and using a jump host					</a>
+									</li>
+			</ul></div><div id="recent-comments-3" class="widget widget_recent_comments"><h4 class="Recent Comments widget-title">Recent comments</h4>				<table class="recentcommentsavatar" cellspacing="0" cellpadding="0" border="0">
+					<tr><td title="Remi Bergsma" class="recentcommentsavatartop" style="height:32px; width:32px;"><a href="http://blog.remibergsma.com" rel="nofollow"><img alt='' src='https://0.gravatar.com/avatar/674bc68c51b45bb00d18d9d9314456fa?s=32&#038;d=identicon&#038;r=G' class='avatar avatar-32' height='32' width='32' /></a></td><td class="recentcommentstexttop" style=""><a href="http://blog.remibergsma.com" rel="nofollow">Remi Bergsma</a> on <a href="https://blog.remibergsma.com/2015/05/07/making-a-xenserver-unique-after-cloning-from-template/#comment-32559">Making a XenServer unique afte&hellip;</a></td></tr><tr><td title="Remi Bergsma" class="recentcommentsavatarend" style="height:32px; width:32px;"><a href="http://blog.remibergsma.com" rel="nofollow"><img alt='' src='https://0.gravatar.com/avatar/674bc68c51b45bb00d18d9d9314456fa?s=32&#038;d=identicon&#038;r=G' class='avatar avatar-32' height='32' width='32' /></a></td><td class="recentcommentstextend" style=""><a href="http://blog.remibergsma.com" rel="nofollow">Remi Bergsma</a> on <a href="https://blog.remibergsma.com/2015/04/04/adding-a-kvm-cluster-with-nsx-networking-to-cloudstack/#comment-32558">Adding a KVM cluster with NSX&hellip;</a></td></tr><tr><td title="Fabrice" class="recentcommentsavatarend" style="height:32px; width:32px;"><img alt='' src='https://2.gravatar.com/avatar/895fba18601047f81c48cd04556e6e45?s=32&#038;d=identicon&#038;r=G' class='avatar avatar-32' height='32' width='32' /></td><td class="recentcommentstextend" style="">Fabrice on <a href="https://blog.remibergsma.com/2015/04/04/adding-a-kvm-cluster-with-nsx-networking-to-cloudstack/#comment-32496">Adding a KVM cluster with NSX&hellip;</a></td></tr><tr><td title="Joran" class="recentcommentsavatarend" style="height:32px; width:32px;"><img alt='' src='https://0.gravatar.com/avatar/0fc3c68583d7637a40314540e418abce?s=32&#038;d=identicon&#038;r=G' class='avatar avatar-32' height='32' width='32' /></td><td class="recentcommentstextend" style="">Joran on <a href="https://blog.remibergsma.com/2015/05/07/making-a-xenserver-unique-after-cloning-from-template/#comment-32451">Making a XenServer unique afte&hellip;</a></td></tr><tr><td title="Steven" class="recentcommentsavatarend" style="height:32px; width:32px;"><img alt='' src='https://1.gravatar.com/avatar/aea6778f37ea1a343c3d066af1eb4c1e?s=32&#038;d=identicon&#038;r=G' class='avatar avatar-32' height='32' width='32' /></td><td class="recentcommentstextend" style="">Steven on <a href="https://blog.remibergsma.com/2016/03/14/creating-your-own-cloudstack-release-is-easy/#comment-32388">Creating your own CloudStack r&hellip;</a></td></tr><tr><td title="Steven" class="recentcommentsavatarend" style="height:32px; width:32px;"><img alt='' src='https://1.gravatar.com/avatar/aea6778f37ea1a343c3d066af1eb4c1e?s=32&#038;d=identicon&#038;r=G' class='avatar avatar-32' height='32' width='32' /></td><td class="recentcommentstextend" style="">Steven on <a href="https://blog.remibergsma.com/2016/03/14/creating-your-own-cloudstack-release-is-easy/#comment-32373">Creating your own CloudStack r&hellip;</a></td></tr><tr><td title="Karun Chennuri" class="recentcommentsavatarend" style="height:32px; width:32px;"><a href="http://dailyraaga.wordpress.com" rel="nofollow"><img alt='' src='https://2.gravatar.com/avatar/efc10b47a0373c1c147c5432f9cc0a31?s=32&#038;d=identicon&#038;r=G' class='avatar avatar-32' height='32' width='32' /></a></td><td class="recentcommentstextend" style=""><a href="http://dailyraaga.wordpress.com" rel="nofollow">Karun Chennuri</a> on <a href="https://blog.remibergsma.com/2015/03/26/connecting-two-open-vswitches-to-create-a-l2-connection/#comment-32364">Connecting two Open vSwitches&hellip;</a></td></tr><tr><td title="Mike" class="recentcommentsavatarend" style="height:32px; width:32px;"><img alt='' src='https://2.gravatar.com/avatar/eabe4e5c34921f3f41d359cdc558ce77?s=32&#038;d=identicon&#038;r=G' class='avatar avatar-32' height='32' width='32' /></td><td class="recentcommentstextend" style="">Mike on <a href="https://blog.remibergsma.com/2012/06/16/upgrading-keepalived-in-debian-squeeze/#comment-32337">Upgrading Keepalived in Debian&hellip;</a></td></tr><tr><td title="Bart" class="recentcommentsavatarend" style="height:32px; width:32px;"><img alt='' src='https://1.gravatar.com/avatar/79d4e556ee4fc5b879100361c06e248b?s=32&#038;d=identicon&#038;r=G' class='avatar avatar-32' height='32' width='32' /></td><td class="recentcommentstextend" style="">Bart on <a href="https://blog.remibergsma.com/2012/11/30/make-the-mouse-wheel-in-ubuntu-behave-like-mac-osx/#comment-32294">Make the mouse wheel in Ubuntu&hellip;</a></td></tr><tr><td title="Diego" class="recentcommentsavatarend" style="height:32px; width:32px;"><img alt='' src='https://0.gravatar.com/avatar/0f8acc742a13aff1abbdf96956ffce60?s=32&#038;d=identicon&#038;r=G' class='avatar avatar-32' height='32' width='32' /></td><td class="recentcommentstextend" style="">Diego on <a href="https://blog.remibergsma.com/2013/02/27/improving-openvpn-security-by-revoking-unneeded-certificates/#comment-32285">Improving OpenVPN security by&hellip;</a></td></tr><tr><td title="Emil" class="recentcommentsavatarend" style="height:32px; width:32px;"><img alt='' src='https://2.gravatar.com/avatar/27c8bf3aa51b265d6ea47461868f9c72?s=32&#038;d=identicon&#038;r=G' class='avatar avatar-32' height='32' width='32' /></td><td class="recentcommentstextend" style="">Emil on <a href="https://blog.remibergsma.com/2013/01/13/howto-connect-to-hosts-on-a-remote-network-using-openvpn-and-some-routing/#comment-32160">HOWTO connect to hosts on a re&hellip;</a></td></tr><tr><td title="Membuat VPS dan Server OpenVPN di DigitalOcean &#8211; Catatan Baha" class="recentcommentsavatarend" style="height:32px; width:32px;"><a href="https://catatan.baha.web.id/3163" rel="nofollow"><img alt='' src='https://catatan.baha.web.id/wp-content/uploads/cropped-bahaxid-logo-square-notext-512-6.png?w=32' class='avatar avatar-32' height='32' width='32' /></a></td><td class="recentcommentstextend" style=""><a href="https://catatan.baha.web.id/3163" rel="nofollow">Membuat VPS dan Serv&hellip;</a> on <a href="https://blog.remibergsma.com/2013/02/27/improving-openvpn-security-by-revoking-unneeded-certificates/#comment-32149">Improving OpenVPN security by&hellip;</a></td></tr><tr><td title="Be-practical" class="recentcommentsavatarend" style="height:32px; width:32px;"><a href="http://bepracticalweb.wordpress.com" rel="nofollow"><img alt='' src='https://2.gravatar.com/avatar/e142b63e21a78daf409946997a8c9110?s=32&#038;d=identicon&#038;r=G' class='avatar avatar-32' height='32' width='32' /></a></td><td class="recentcommentstextend" style=""><a href="http://bepracticalweb.wordpress.com" rel="nofollow">Be-practical</a> on <a href="https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/#comment-32129">My tips for the Red Hat RHCE&hellip;</a></td></tr><tr><td title="Areeb Soo Yasir" class="recentcommentsavatarend" style="height:32px; width:32px;"><a href="http://areebyasir.com" rel="nofollow"><img alt='' src='https://0.gravatar.com/avatar/f5d549d7e8b7b869f17f5ba5defc776d?s=32&#038;d=identicon&#038;r=G' class='avatar avatar-32' height='32' width='32' /></a></td><td class="recentcommentstextend" style=""><a href="http://areebyasir.com" rel="nofollow">Areeb Soo Yasir</a> on <a href="https://blog.remibergsma.com/2013/05/03/forwarding-a-local-mysql-socket-to-a-remote-mysql-server/#comment-32110">Forwarding a local MySQL socke&hellip;</a></td></tr><tr><td title="[Tutorial] Web based SSH terminal for the Raspberry Pi &#8211; Oráculo" class="recentcommentsavatarend" style="height:32px; width:32px;"><a href="http://home.oraculo.pt/2013/12/22/web-based-terminal-raspberry-pi/" rel="nofollow"></a></td><td class="recentcommentstextend" style=""><a href="http://home.oraculo.pt/2013/12/22/web-based-terminal-raspberry-pi/" rel="nofollow">[Tutorial] Web based&hellip;</a> on <a href="https://blog.remibergsma.com/2013/03/15/always-available-linux-terminal-shell-in-a-box-on-raspberry-pi/#comment-32049">Building an always available L&hellip;</a></td></tr>				</table>
+				</div><div id="archives-2" class="widget widget_archive"><h4 class="Archives widget-title">Archives</h4>		<ul>
+			<li><a href='https://blog.remibergsma.com/2017/01/'>January 2017</a>&nbsp;(1)</li>
+	<li><a href='https://blog.remibergsma.com/2016/07/'>July 2016</a>&nbsp;(1)</li>
+	<li><a href='https://blog.remibergsma.com/2016/03/'>March 2016</a>&nbsp;(2)</li>
+	<li><a href='https://blog.remibergsma.com/2015/11/'>November 2015</a>&nbsp;(2)</li>
+	<li><a href='https://blog.remibergsma.com/2015/10/'>October 2015</a>&nbsp;(2)</li>
+	<li><a href='https://blog.remibergsma.com/2015/07/'>July 2015</a>&nbsp;(1)</li>
+	<li><a href='https://blog.remibergsma.com/2015/06/'>June 2015</a>&nbsp;(2)</li>
+	<li><a href='https://blog.remibergsma.com/2015/05/'>May 2015</a>&nbsp;(3)</li>
+	<li><a href='https://blog.remibergsma.com/2015/04/'>April 2015</a>&nbsp;(3)</li>
+	<li><a href='https://blog.remibergsma.com/2015/03/'>March 2015</a>&nbsp;(1)</li>
+	<li><a href='https://blog.remibergsma.com/2015/02/'>February 2015</a>&nbsp;(1)</li>
+	<li><a href='https://blog.remibergsma.com/2015/01/'>January 2015</a>&nbsp;(1)</li>
+	<li><a href='https://blog.remibergsma.com/2014/12/'>December 2014</a>&nbsp;(1)</li>
+	<li><a href='https://blog.remibergsma.com/2014/11/'>November 2014</a>&nbsp;(1)</li>
+	<li><a href='https://blog.remibergsma.com/2014/10/'>October 2014</a>&nbsp;(1)</li>
+	<li><a href='https://blog.remibergsma.com/2014/05/'>May 2014</a>&nbsp;(1)</li>
+	<li><a href='https://blog.remibergsma.com/2014/04/'>April 2014</a>&nbsp;(2)</li>
+	<li><a href='https://blog.remibergsma.com/2014/02/'>February 2014</a>&nbsp;(2)</li>
+	<li><a href='https://blog.remibergsma.com/2014/01/'>January 2014</a>&nbsp;(3)</li>
+	<li><a href='https://blog.remibergsma.com/2013/12/'>December 2013</a>&nbsp;(1)</li>
+	<li><a href='https://blog.remibergsma.com/2013/11/'>November 2013</a>&nbsp;(1)</li>
+	<li><a href='https://blog.remibergsma.com/2013/10/'>October 2013</a>&nbsp;(1)</li>
+	<li><a href='https://blog.remibergsma.com/2013/08/'>August 2013</a>&nbsp;(1)</li>
+	<li><a href='https://blog.remibergsma.com/2013/07/'>July 2013</a>&nbsp;(1)</li>
+	<li><a href='https://blog.remibergsma.com/2013/06/'>June 2013</a>&nbsp;(4)</li>
+	<li><a href='https://blog.remibergsma.com/2013/05/'>May 2013</a>&nbsp;(6)</li>
+	<li><a href='https://blog.remibergsma.com/2013/04/'>April 2013</a>&nbsp;(1)</li>
+	<li><a href='https://blog.remibergsma.com/2013/03/'>March 2013</a>&nbsp;(2)</li>
+	<li><a href='https://blog.remibergsma.com/2013/02/'>February 2013</a>&nbsp;(3)</li>
+	<li><a href='https://blog.remibergsma.com/2013/01/'>January 2013</a>&nbsp;(6)</li>
+	<li><a href='https://blog.remibergsma.com/2012/12/'>December 2012</a>&nbsp;(3)</li>
+	<li><a href='https://blog.remibergsma.com/2012/11/'>November 2012</a>&nbsp;(7)</li>
+	<li><a href='https://blog.remibergsma.com/2012/10/'>October 2012</a>&nbsp;(6)</li>
+	<li><a href='https://blog.remibergsma.com/2012/09/'>September 2012</a>&nbsp;(4)</li>
+	<li><a href='https://blog.remibergsma.com/2012/08/'>August 2012</a>&nbsp;(8)</li>
+	<li><a href='https://blog.remibergsma.com/2012/07/'>July 2012</a>&nbsp;(7)</li>
+	<li><a href='https://blog.remibergsma.com/2012/06/'>June 2012</a>&nbsp;(2)</li>
+	<li><a href='https://blog.remibergsma.com/2012/05/'>May 2012</a>&nbsp;(1)</li>
+	<li><a href='https://blog.remibergsma.com/2012/04/'>April 2012</a>&nbsp;(4)</li>
+	<li><a href='https://blog.remibergsma.com/2012/03/'>March 2012</a>&nbsp;(14)</li>
+	<li><a href='https://blog.remibergsma.com/2012/02/'>February 2012</a>&nbsp;(7)</li>
+	<li><a href='https://blog.remibergsma.com/2012/01/'>January 2012</a>&nbsp;(1)</li>
+	<li><a href='https://blog.remibergsma.com/2011/12/'>December 2011</a>&nbsp;(1)</li>
+	<li><a href='https://blog.remibergsma.com/2011/11/'>November 2011</a>&nbsp;(2)</li>
+		</ul>
+		</div><div id="twitter-3" class="widget widget_twitter"><h4 class="Twitter widget-title"><a href='http://twitter.com/remibergsma'>Tweets @remibergsma</a></h4><ul class='tweets'>
+			<li>
+				RT @<a href='http://twitter.com/Justin_D_Pettit'>Justin_D_Pettit</a>: Open vSwitch 2.7.1 is released. <a href="https://mail.openvswitch.org/pipermail/ovs-announce/2017-July/000238.html"> mail.openvswitch.org/pipermail/ovs-…</a> 				<a href="http://twitter.com/remibergsma/statuses/882918174110474241" class="timesince">10&nbsp;months&nbsp;ago</a>
+			</li>
+
+			
+			<li>
+				Yay! 3 in a row! Upgraded <a href='http://twitter.com/search?q=%23CloudStack'>#CloudStack</a> 4.4.4 to latest and greatest @<a href='http://twitter.com/cosmiccloud_'>cosmiccloud_</a> Now enjoy the weekly releases :-) <a href="https://github.com/MissionCriticalCloud/cosmic/releases"> github.com/MissionCritica…</a> 				<a href="http://twitter.com/remibergsma/statuses/882293761774161920" class="timesince">10&nbsp;months&nbsp;ago</a>
+			</li>
+
+			
+			<li>
+				RT @<a href='http://twitter.com/debian'>debian</a>: Debian 9 &quot;stretch&quot; has been released! <a href="https://bits.debian.org/2017/06/stretch-released.html"> bits.debian.org/2017/06/stretc…</a> <a href='http://twitter.com/search?q=%23releasingstretch'>#releasingstretch</a> 				<a href="http://twitter.com/remibergsma/statuses/876349912585310209" class="timesince">11&nbsp;months&nbsp;ago</a>
+			</li>
+
+			
+			<li>
+				RT @<a href='http://twitter.com/as8455'>as8455</a>: Bezoek tijdens de Nationale Datacenter Dag 13 juni <a href='http://twitter.com/search?q=%23DCdag2017'>#DCdag2017</a> het <a href='http://twitter.com/search?q=%23datacenter'>#datacenter</a> van @<a href='http://twitter.com/atom86'>atom86</a> en @<a href='http://twitter.com/schubergphilis'>schubergphilis</a>. Aanmelden via sal… 				<a href="http://twitter.com/remibergsma/statuses/872139459868938240" class="timesince">11&nbsp;months&nbsp;ago</a>
+			</li>
+
+			
+			<li>
+				RT @<a href='http://twitter.com/edith_h'>edith_h</a>: 1st wave DevOps &quot;ops, write code&quot;
+2nd &quot;coders, run stuff&quot; 
+3rd &quot;can&#039;t be expert in everything, find joy &amp; collaborate&quot; @<a href='http://twitter.com/mipsyt'>mipsyt</a>… 				<a href="http://twitter.com/remibergsma/statuses/867607848888524801" class="timesince">12&nbsp;months&nbsp;ago</a>
+			</li>
+
+			</ul><a href="http://twitter.com/remibergsma"  class='twitter-follow-button' data-show-count='false'>Follow @remibergsma</a></div><div id="blog_subscription-3" class="widget widget_blog_subscription"><h4 class="Follow Blog widget-title"><label for="subscribe-field">Follow Blog via Email</label></h4>
+				<form action="https://subscribe.wordpress.com" method="post" accept-charset="utf-8" id="subscribe-blog">
+											<p>Enter your email address to follow this blog and receive notifications of new posts by email.</p>
+<p>Join 114 other followers</p>
+						<p><input type="text" name="email" style="width: 95%; padding: 1px 2px" placeholder="Enter your email address" value="" id="subscribe-field"/></p>
+					
+					<p>
+						<input type="hidden" name="action" value="subscribe"/>
+						<input type="hidden" name="blog_id" value="29899844"/>
+						<input type="hidden" name="source" value="https://blog.remibergsma.com/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/"/>
+						<input type="hidden" name="sub-type" value="widget"/>
+						<input type="hidden" name="redirect_fragment" value="blog_subscription-3" />
+						<input type="hidden" id="_wpnonce" name="_wpnonce" value="8ed7545586" />						<input type="submit" value="Follow" />
+					</p>
+				</form>
+			
+</div></div><!-- /#sidebar -->			
+		</div> <!-- /row -->
+	</div><!-- /container -->
+</div> <!-- /#wrapper -->
+<div id="footer" class="clearfix">
+
+		
+		<div id="sub-floor" class="clearfix">
+			<div class="container">
+				<div class="row">
+					<div id="footer-links" class="span7">
+											</div><!-- /#footer-links -->
+
+					<div id="credit" class="span12">
+						<a href="https://wordpress.com/?ref=footer_blog">Blog at WordPress.com.</a>
+											</div><!-- /#credits -->
+
+				</div><!-- /row -->
+			</div><!-- /.container -->
+		</div><!-- /#sub-floor -->
+	</div><!-- /#footer -->
+	<!--  -->
+<script type='text/javascript' src='//0.gravatar.com/js/gprofiles.js?ver=201821y'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://s1.wp.com/wp-content/mu-plugins/gravatar-hovercards/wpgroho.js?m=1380573781h'></script>
+
+	<script>
+		//initialize and attach hovercards to all gravatars
+		jQuery( document ).ready( function( $ ) {
+
+			if (typeof Gravatar === "undefined"){
+				return;
+			}
+
+			if ( typeof Gravatar.init !== "function" ) {
+				return;
+			}			
+
+			Gravatar.profile_cb = function( hash, id ) {
+				WPGroHo.syncProfileData( hash, id );
+			};
+			Gravatar.my_hash = WPGroHo.my_hash;
+			Gravatar.init( 'body', '#wp-admin-bar-my-account' );
+		});
+	</script>
+
+		<div style="display:none">
+	<div class="grofile-hash-map-1db9e549d5921621c76a71f03d58cc1e">
+	</div>
+	<div class="grofile-hash-map-674bc68c51b45bb00d18d9d9314456fa">
+	</div>
+	<div class="grofile-hash-map-324e73fd59bd4a78e0e4214cc0c09a25">
+	</div>
+	<div class="grofile-hash-map-d4111ca112db979f468f05ea5fbd65a1">
+	</div>
+	<div class="grofile-hash-map-ded595e4808c57f2c246c76238f30f1a">
+	</div>
+	<div class="grofile-hash-map-e0272ed9cf6b37b1beec07ebc1400b5e">
+	</div>
+	<div class="grofile-hash-map-e42cecbfaa13cf8beb92b56fad9177e3">
+	</div>
+	<div class="grofile-hash-map-6e3bd7324a09426b5c9ee200a14a7313">
+	</div>
+	<div class="grofile-hash-map-10dc6a8439a2a9f9d708e14b80ae8049">
+	</div>
+	<div class="grofile-hash-map-1f1b89669fcd8ab0aae4d840db71fad9">
+	</div>
+	<div class="grofile-hash-map-d53d5a799025acf02e74085bf1a9d4e3">
+	</div>
+	<div class="grofile-hash-map-1b5606c2c57e342d63dd0b61d9d75d05">
+	</div>
+	<div class="grofile-hash-map-27e14a3581bd89e6fd7cda2bfc8de3a8">
+	</div>
+	<div class="grofile-hash-map-741589fd6b80d478beb7fe0235a948d5">
+	</div>
+	<div class="grofile-hash-map-4b565a3a1391e11ee3f52e609f211e02">
+	</div>
+	<div class="grofile-hash-map-0853433ed71a1a774a5e4c5ee402b39e">
+	</div>
+	<div class="grofile-hash-map-bb3617b917235c726c4db87ca4e9232b">
+	</div>
+	<div class="grofile-hash-map-686c39b572346c88e98e1c4269d56ada">
+	</div>
+	<div class="grofile-hash-map-f759a4e9cd7a68317db5c98866312314">
+	</div>
+	<div class="grofile-hash-map-bd9a84b712bf6ac36ff94771f29444a3">
+	</div>
+	<div class="grofile-hash-map-7939249ea68746ccf121e8af2af4dea3">
+	</div>
+	<div class="grofile-hash-map-9da51b2742a4965e74be51d8053cfd3a">
+	</div>
+	<div class="grofile-hash-map-4504e09c1aa66005c2e7b75785a8b536">
+	</div>
+	<div class="grofile-hash-map-e142b63e21a78daf409946997a8c9110">
+	</div>
+	<div class="grofile-hash-map-e142b63e21a78daf409946997a8c9110">
+	</div>
+	<div class="grofile-hash-map-895fba18601047f81c48cd04556e6e45">
+	</div>
+	<div class="grofile-hash-map-0fc3c68583d7637a40314540e418abce">
+	</div>
+	<div class="grofile-hash-map-aea6778f37ea1a343c3d066af1eb4c1e">
+	</div>
+	<div class="grofile-hash-map-efc10b47a0373c1c147c5432f9cc0a31">
+	</div>
+	<div class="grofile-hash-map-eabe4e5c34921f3f41d359cdc558ce77">
+	</div>
+	<div class="grofile-hash-map-79d4e556ee4fc5b879100361c06e248b">
+	</div>
+	<div class="grofile-hash-map-0f8acc742a13aff1abbdf96956ffce60">
+	</div>
+	<div class="grofile-hash-map-27c8bf3aa51b265d6ea47461868f9c72">
+	</div>
+	<div class="grofile-hash-map-f5d549d7e8b7b869f17f5ba5defc776d">
+	</div>
+	</div>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var HighlanderComments = {"loggingInText":"Logging In\u2026","submittingText":"Posting Comment\u2026","postCommentText":"Post Comment","connectingToText":"Connecting to %s","commentingAsText":"%1$s: You are commenting using your %2$s account.","logoutText":"Log Out","loginText":"Log In","connectURL":"https:\/\/remibergsma.wordpress.com\/public.api\/connect\/?action=request","logoutURL":"https:\/\/remibergsma.wordpress.com\/wp-login.php?action=logout&_wpnonce=9fa5a82c79","homeURL":"https:\/\/blog.remibergsma.com\/","postID":"1912","gravDefault":"identicon","enterACommentError":"Please enter a comment","enterEmailError":"Please enter your email address here","invalidEmailError":"Invalid email address","enterAuthorError":"Please enter your name here","gravatarFromEmail":"This picture will show whenever you leave a comment. Click to customize it.","logInToExternalAccount":"Log in to use details from one of these accounts.","change":"Change","changeAccount":"Change Account","comment_registration":"","userIsLoggedIn":"","isJetpack":"","text_direction":"ltr"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://s2.wp.com/_static/??/wp-content/js/jquery/jquery.autoresize.js,/wp-content/mu-plugins/highlander-comments/script.js?m=1521806916j'></script>
+
+	<div id="carousel-reblog-box">
+		<form action="#" name="carousel-reblog">
+			<textarea id="carousel-reblog-content" name="carousel-reblog-content" placeholder="Add your thoughts here... (optional)"></textarea>
+			<label for="carousel-reblog-to-blog-id" id="carousel-reblog-lblogid">Post to</label>
+			<select name="carousel-reblog-to-blog-id" id="carousel-reblog-to-blog-id">
+						</select>
+
+			<div class="submit">
+				<span class="canceltext"><a href="#" class="cancel">Cancel</a></span>
+				<input type="submit" name="carousel-reblog-submit" class="button" id="carousel-reblog-submit" value="Reblog Post" />
+				<input type="hidden" id="carousel-reblog-blog-id" value="29899844" />
+				<input type="hidden" id="carousel-reblog-blog-url" value="https://blog.remibergsma.com" />
+				<input type="hidden" id="carousel-reblog-blog-title" value="Remi Bergsma&#039;s blog" />
+				<input type="hidden" id="carousel-reblog-post-url" value="" />
+				<input type="hidden" id="carousel-reblog-post-title" value="" />
+			</div>
+
+			<input type="hidden" id="_wpnonce" name="_wpnonce" value="a4cc323578" /><input type="hidden" name="_wp_http_referer" value="/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/" />		</form>
+
+		<div class="arrow"></div>
+	</div>
+<script type='text/javascript' charset='UTF-8' id='polldaddyRatings'><!--//--><![CDATA[//><!--
+PDRTJS_settings_5580413_post_1912={"id":5580413,"unique_id":"wp-post-1912","title":"My%20tips%20for%20the%20Red%20Hat%20RHCE%26nbsp%3Bexam","permalink":"https:\/\/blog.remibergsma.com\/2013\/10\/07\/my-tips-for-the-red-hat-rhcsa-rhce-exam\/","item_id":"_post_1912"}; if ( typeof PDRTJS_RATING !== 'undefined' ){if ( typeof PDRTJS_5580413_post_1912 == 'undefined' ){PDRTJS_5580413_post_1912 = new PDRTJS_RATING( PDRTJS_settings_5580413_post_1912 );}}
+//--><!]]></script><script type='text/javascript' charset='UTF-8' src='https://polldaddy.com/js/rating/rating.js'></script>
+	<script type="text/javascript">
+		window.WPCOM_sharing_counts = {"https:\/\/blog.remibergsma.com\/2013\/10\/07\/my-tips-for-the-red-hat-rhcsa-rhce-exam\/":1912};
+	</script>
+			<div id="sharing_email" style="display: none;">
+		<form action="/2013/10/07/my-tips-for-the-red-hat-rhcsa-rhce-exam/" method="post">
+			<label for="target_email">Send to Email Address</label>
+			<input type="email" name="target_email" id="target_email" value="" />
+
+			
+				<label for="source_name">Your Name</label>
+				<input type="text" name="source_name" id="source_name" value="" />
+
+				<label for="source_email">Your Email Address</label>
+				<input type="email" name="source_email" id="source_email" value="" />
+
+						<input type="text" id="jetpack-source_f_name" name="source_f_name" class="input" value="" size="25" autocomplete="off" title="This field is for validation and should not be changed" />
+			
+			<div
+				class="g-recaptcha"
+				data-sitekey="6LcmyE0UAAAAALID28yVNg7pFCodGaArJzHitez_"
+				data-theme="light"
+				data-type="image"
+				data-tabindex="0"></div>
+			<script type="text/javascript" src="https://www.google.com/recaptcha/api.js?hl=en" async></script>
+			
+			<img style="float: right; display: none" class="loading" src="https://s2.wp.com/wp-content/mu-plugins/post-flair/sharing/images/loading.gif" alt="loading" width="16" height="16" />
+			<input type="submit" value="Send Email" class="sharing_send" />
+			<a rel="nofollow" href="#cancel" class="sharing_cancel">Cancel</a>
+
+			<div class="errors errors-1" style="display: none;">
+				Post was not sent - check your email addresses!			</div>
+
+			<div class="errors errors-2" style="display: none;">
+				Email check failed, please try again			</div>
+
+			<div class="errors errors-3" style="display: none;">
+				Sorry, your blog cannot share posts by email.			</div>
+		</form>
+	</div>
+<script type='text/javascript' src='https://platform.twitter.com/widgets.js?ver=20111117'></script>
+<link rel='stylesheet' id='all-css-0-3' href='https://s0.wp.com/wp-content/mu-plugins/carousel/jetpack-carousel.css?m=1524699534h&cssminify=yes' type='text/css' media='all' />
+<!--[if lte IE 8]>
+<link rel='stylesheet' id='jetpack-carousel-ie8fix-css'  href='https://s1.wp.com/wp-content/mu-plugins/carousel/jetpack-carousel-ie8fix.css?m=1412618825h&#038;ver=20121024' type='text/css' media='all' />
+<![endif]-->
+<script type='text/javascript'>
+/* <![CDATA[ */
+var actionbardata = {"siteID":"29899844","siteName":"Remi Bergsma's blog","siteURL":"https:\/\/blog.remibergsma.com","icon":"<img alt='' src='https:\/\/secure.gravatar.com\/blavatar\/dcb35ad07a45826f2aad1dded4b33c16?s=50&d=https%3A%2F%2Fs2.wp.com%2Fi%2Flogo%2Fwpcom-gray-white.png' class='avatar avatar-50' height='50' width='50' \/>","canManageOptions":"","canCustomizeSite":"","isFollowing":"","themeSlug":"premium\/standard","signupURL":"https:\/\/wordpress.com\/start\/","loginURL":"https:\/\/remibergsma.wordpress.com\/wp-login.php?redirect_to=https%3A%2F%2Fblog.remibergsma.com%2F2013%2F10%2F07%2Fmy-tips-for-the-red-hat-rhcsa-rhce-exam%2F","themeURL":"","xhrURL":"https:\/\/blog.remibergsma.com\/wp-admin\/admin-ajax.php","nonce":"b497d207a9","isSingular":"1","isFolded":"","isLoggedIn":"","isMobile":"","subscribeNonce":"<input type=\"hidden\" id=\"_wpnonce\" name=\"_wpnonce\" value=\"8ed7545586\" \/>","referer":"https:\/\/blog.remibergsma.com\/2013\/10\/07\/my-tips-for-the-red-hat-rhcsa-rhce-exam\/","canFollow":"1","feedID":"4221302","statusMessage":"","customizeLink":"https:\/\/remibergsma.wordpress.com\/wp-admin\/customize.php?url=https%3A%2F%2Fremibergsma.wordpress.com%2F2013%2F10%2F07%2Fmy-tips-for-the-red-hat-rhcsa-rhce-exam%2F","postID":"1912","shortlink":"https:\/\/wp.me\/p21sjy-uQ","canEditPost":"","editLink":"https:\/\/wordpress.com\/post\/blog.remibergsma.com\/1912","statsLink":"https:\/\/wordpress.com\/stats\/post\/1912\/blog.remibergsma.com","i18n":{"view":"View site","follow":"Follow","following":"Following","edit":"Edit","login":"Log in","signup":"Sign up","customize":"Customize","report":"Report this content","themeInfo":"Get theme: Standard","shortlink":"Copy shortlink","copied":"Copied","followedText":"New posts from this site will now appear in your <a href=\"https:\/\/wordpress.com\/\">Reader<\/a>","foldBar":"Collapse this bar","unfoldBar":"Expand this bar","editSubs":"Manage subscriptions","viewReader":"View site in Reader","viewReadPost":"View post in Reader","subscribe":"Sign me up","enterEmail":"Enter your email address","followers":"Join 114 other followers","alreadyUser":"Already have a WordPress.com account? <a href=\"https:\/\/remibergsma.wordpress.com\/wp-login.php?redirect_to=https%3A%2F%2Fblog.remibergsma.com%2F2013%2F10%2F07%2Fmy-tips-for-the-red-hat-rhcsa-rhce-exam%2F\">Log in now.<\/a>","stats":"Stats"}};
+/* ]]> */
+</script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var jetpackCarouselStrings = {"widths":[370,700,1000,1200,1400,2000],"is_logged_in":"","lang":"en","ajaxurl":"https:\/\/blog.remibergsma.com\/wp-admin\/admin-ajax.php","nonce":"5f1cb26ef6","display_exif":"1","display_geo":"1","single_image_gallery":"1","single_image_gallery_media_file":"","background_color":"black","comment":"Comment","post_comment":"Post Comment","write_comment":"Write a Comment...","loading_comments":"Loading Comments...","download_original":"View full size <span class=\"photo-size\">{0}<span class=\"photo-size-times\">\u00d7<\/span>{1}<\/span>","no_comment_text":"Please be sure to submit some text with your comment.","no_comment_email":"Please provide an email address to comment.","no_comment_author":"Please provide your name to comment.","comment_post_error":"Sorry, but there was an error posting your comment. Please try again later.","comment_approved":"Your comment was approved.","comment_unapproved":"Your comment is in moderation.","camera":"Camera","aperture":"Aperture","shutter_speed":"Shutter Speed","focal_length":"Focal Length","copyright":"Copyright","comment_registration":"0","require_name_email":"1","login_url":"https:\/\/remibergsma.wordpress.com\/wp-login.php?redirect_to=https%3A%2F%2Fblog.remibergsma.com%2F2013%2F10%2F07%2Fmy-tips-for-the-red-hat-rhcsa-rhce-exam%2F","blog_id":"29899844","meta_data":["camera","aperture","shutter_speed","focal_length","copyright"],"local_comments_commenting_as":"<fieldset><label for=\"email\">Email (Required)<\/label> <input type=\"text\" name=\"email\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-email-field\" \/><\/fieldset><fieldset><label for=\"author\">Name (Required)<\/label> <input type=\"text\" name=\"author\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-author-field\" \/><\/fieldset><fieldset><label for=\"url\">Website<\/label> <input type=\"text\" name=\"url\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-url-field\" \/><\/fieldset>","reblog":"Reblog","reblogged":"Reblogged","reblog_add_thoughts":"Add your thoughts here... (optional)","reblogging":"Reblogging...","post_reblog":"Post Reblog","stats_query_args":"blog=29899844&v=wpcom&tz=2&user_id=0&subd=remibergsma","is_public":"1","reblog_enabled":""};
+/* ]]> */
+</script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var sharing_js_options = {"lang":"en","counts":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://s1.wp.com/_static/??-eJyVUNtuwjAM/aGl3kBQ7WHap0whNeA0N+yEjb/HSBT6gCrtyda5+STwW4zLqWKq4AUGPJPD8td5eYMZFZspoR0oCQQaUeDUsOHRpiEgT2JKLrRBSQ1yOUY1GsYSLl2ktJBoB+XNzjJEKxVZN5PPyEy3sAf2z4TK1o2yZHKVcrqZHturl0h5lp/jXr+AL/fRzVUvbjnLuQkG8FiL9jITsNRvJIlYzbp7hx+9DPvMcUFfslSzD5YY5GiZ0mGaavqOXx+b1WbV99v+018BBb27NA=='></script>
+<script type='text/javascript'>
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-twitter', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-linkedin', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomlinkedin', 'menubar=1,resizable=1,width=580,height=450' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-google-plus-1', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomgoogle-plus-1', 'menubar=1,resizable=1,width=480,height=550' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-facebook', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-tumblr', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomtumblr', 'menubar=1,resizable=1,width=450,height=450' );
+				return false;
+			});
+</script>
+<script type="text/javascript">
+// <![CDATA[
+(function() {
+try{
+  if ( window.external &&'msIsSiteMode' in window.external) {
+    if (window.external.msIsSiteMode()) {
+      var jl = document.createElement('script');
+      jl.type='text/javascript';
+      jl.async=true;
+      jl.src='/wp-content/plugins/ie-sitemode/custom-jumplist.php';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jl, s);
+    }
+  }
+}catch(e){}
+})();
+// ]]>
+</script>		<iframe src='https://widgets.wp.com/likes/master.html?ver=20180319#ver=20180319' scrolling='no' id='likes-master' name='likes-master' style='display:none;'></iframe>
+		<div id='likes-other-gravatars'><div class="likes-text"><span>%d</span> bloggers like this:</div><ul class="wpl-avatars sd-like-gravatars"></ul></div>
+<script src="//stats.wp.com/w.js?56" type="text/javascript" async defer></script>
+<script type="text/javascript">
+_tkq = window._tkq || [];
+_stq = window._stq || [];
+_tkq.push(['storeContext', {'blog_id':'29899844','blog_tz':'2','user_lang':'en','blog_lang':'en','user_id':'0'}]);
+_stq.push(['view', {'blog':'29899844','v':'wpcom','tz':'2','user_id':'0','post':'1912','subd':'remibergsma'}]);
+_stq.push(['extra', {'crypt':'UE40eW5QN0p8M2Y/RE1TaVhzUzFMbjdWNHpwZGhTayxPSUFCMGRVYVNrSFguN3FwSmQ5RGtNX3VQcj1yVzhiflM1THQtLGFdQ2toOXYlRzRiUytxLVQzZHM/aHhwVVpSNW8/eTZyWzRRUFJjNmVyYTRNfjFMWlM2TjdOTVU0ZCtMb0ldWkJEbXxPX3dEeW1veDB5MnBIcWh3cjFPUG9aTXRQUVUtZVNlMmx2WHlBeVUwNnolQ0wmRSU2fCVuP25bQi9rZ01zLnYyM2Jkbi1QQjBZZjl8czRVW1BTLnx+VS42R1hyS3lCP09KbEdqTmh0NTg9NE0uTUtOQ0V6XyZORkVyYzlUcnpRV3FZfnlURXFZU1VWM3VXZkFLak4yL0JRbGslP2pSSmRoMyZNVnBHeEZVU0h5W35zQVRzeFVOM1VXUy00RVAsMzE2cj1ONXA0VFdYPU93az16Uy5meA=='}]);
+_stq.push([ 'clickTrackerInit', '29899844', '1912' ]);
+	</script>
+<noscript><img src="https://pixel.wp.com/b.gif?v=noscript" style="height:0px;width:0px;overflow:hidden" alt="" /></noscript>
+<script>
+if ( 'object' === typeof wpcom_mobile_user_agent_info ) {
+
+	wpcom_mobile_user_agent_info.init();
+	var mobileStatsQueryString = "";
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedPlatformName )
+		mobileStatsQueryString += "&x_" + 'mobile_platforms' + '=' + wpcom_mobile_user_agent_info.matchedPlatformName;
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedUserAgentName )
+		mobileStatsQueryString += "&x_" + 'mobile_devices' + '=' + wpcom_mobile_user_agent_info.matchedUserAgentName;
+	
+	if( wpcom_mobile_user_agent_info.isIPad() )
+		mobileStatsQueryString += "&x_" + 'ipad_views' + '=' + 'views';
+
+	if( "" != mobileStatsQueryString ) {
+		new Image().src = document.location.protocol + '//pixel.wp.com/g.gif?v=wpcom-no-pv' + mobileStatsQueryString + '&baba=' + Math.random();
+	}
+	
+}
+</script>	</body>
+</html>
