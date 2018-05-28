@@ -29,6 +29,9 @@ Create and edit text files
 ===========================================================================================
 Create, delete, copy, and move files and directories
 ===========================================================================================
+  Directory
+    Write - opravneni umoznuje smazat soubor, ke kteremu jinak nemam pristup
+    Execute - umoznuje prohledavat 
 
 ===========================================================================================
 Create hard and soft links
@@ -57,3 +60,5 @@ UOVDY
 UMISTENI STRANEK
   /usr/share/man/
 
+HIERARCHIE ADRESARU UNIX
+  man 7 hier
