@@ -15,19 +15,25 @@ Create and edit text files
 Create, delete, copy, and move files and directories
 
 Create hard and soft links
-
+===========================================================================================
 List, set, and change standard ugo/rwx permissions
+===========================================================================================
 
 Locate, read, and use system documentation including man, info, and files in /usr/share/doc
 -------------------------------------------------------------------------------------------
 CHYBEJICI MANUALOVE STRANKY
 yum provides "man*"
 yum install man-pages
- yum install man-pages-overrides
-
+yum install man-pages-overrides
 mandb
+
+HLEDANI
 man -k    # search man pages
+
+UOVDY
 man 1 intro
 info coreutils
+
+UMISTENI STRANEK
 /usr/share/man/
 
