@@ -1,0 +1,6 @@
+ACCESS REMOTE SYSTEMS USING SSH
+
+- servery maji male displeje
+- konfigurace ssh klíčů je pohodlná
+ssh-keygen # vygeneruje dvojici klíčů, standardně do .ssh
+ssh-copy-id -i "server"
