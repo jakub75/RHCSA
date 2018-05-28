@@ -23,4 +23,6 @@ Locate, read, and use system documentation including man, info, and files in /us
 mandb
 man -k    # search man pages
 
+info intro
+info coreutils
 
