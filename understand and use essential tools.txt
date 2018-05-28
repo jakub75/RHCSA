@@ -44,6 +44,13 @@ List, set, and change standard ugo/rwx permissions
 ===========================================================================================
 Locate, read, and use system documentation including man, info, and files in /usr/share/doc
 ===========================================================================================
+1. command --help
+2. man command
+3. info command
+   - rsyslog
+   - pam
+4. /usr/share/doc
+
 CHYBEJICI MANUALOVE STRANKY
   yum provides "man*"
   yum install man-pages
