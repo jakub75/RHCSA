@@ -2,3 +2,8 @@ awk
 grep
 sed
 ed
+
+ssh
+sshkeygen
+ssh-copy-id
+
