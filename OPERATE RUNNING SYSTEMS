@@ -16,7 +16,11 @@ OPERATE RUNNING SYSTEMS
 ======================================================================
         Identify CPU/memory intensive processes, adjust process priority with renice, and kill processes
 ======================================================================
-        
+  ps -ef
+  ps aux
+  ps fax   # vztahy mezi rodici a detmi
+
+
 ======================================================================
         Locate and interpret system log files and journals
 ======================================================================
