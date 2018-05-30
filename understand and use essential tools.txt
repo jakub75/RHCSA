@@ -35,15 +35,21 @@ Create, delete, copy, and move files and directories
 Create hard and soft links
 ===========================================================================================
 
-  Directory
-    Write - opravneni umoznuje smazat soubor, ke kteremu jinak nemam pristup
-    Execute - umoznuje prohledavat 
-    
+USER RIGHTS
+
            |   | file   | dir 
     --------------------------
     read   | 4 | open   | list
     write  | 2 | modify | create,delete 
     execute| 1 | run    | cd
+
+SPECIAL RIGHTS
+
+         | file               | dir
+  ------------------------------------------------------------------------
+  SUID   | run as owner       | ---
+  SGID   | run as group owner | inherit group owner
+  sticky | ---                | only delete if owner or owner of directory
 
 
 ===========================================================================================
