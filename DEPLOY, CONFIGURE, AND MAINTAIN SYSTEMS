@@ -4,14 +4,25 @@ DEPLOY, CONFIGURE, AND MAINTAIN SYSTEMS
 =====================================================================================
 Configure networking and hostname resolution statically or dynamically
 =====================================================================================
-TEMPORARY CONFIGURATIO
 
+pro dlouhe prikazy vyuyzit balik BASH-COMPLETION
+
+RUNTIME CONFIGURATION
+- primo na sitovou kartu
   ip
   ip addr
   ip addr help
   
   ip link show #stav linek
 
+
+PERSISTENT CONFIGURATION
+- modifikuje sitove skripty
+  Network Manager
+  - nmcli
+  - nmtui
+  - Gnome - GUI
+  
 
 =====================================================================================
 Schedule tasks using at and cron
