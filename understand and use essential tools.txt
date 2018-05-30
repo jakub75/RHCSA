@@ -29,13 +29,22 @@ Create and edit text files
 ===========================================================================================
 Create, delete, copy, and move files and directories
 ===========================================================================================
-  Directory
-    Write - opravneni umoznuje smazat soubor, ke kteremu jinak nemam pristup
-    Execute - umoznuje prohledavat 
+
 
 ===========================================================================================
 Create hard and soft links
 ===========================================================================================
+
+  Directory
+    Write - opravneni umoznuje smazat soubor, ke kteremu jinak nemam pristup
+    Execute - umoznuje prohledavat 
+    
+           |   | file   | dir 
+    --------------------------
+    read   | 4 | open   | list
+    write  | 2 | modify | create,delete 
+    execute| 1 | run    | cd
+
 
 ===========================================================================================
 List, set, and change standard ugo/rwx permissions
