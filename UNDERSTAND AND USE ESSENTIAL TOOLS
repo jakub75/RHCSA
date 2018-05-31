@@ -35,6 +35,14 @@ Create, delete, copy, and move files and directories
 Create hard and soft links
 ===========================================================================================
 
+
+
+===========================================================================================
+List, set, and change standard ugo/rwx permissions
+===========================================================================================
+
+
+
 USER RIGHTS
 
            |   | file   | dir 
@@ -51,10 +59,6 @@ SPECIAL RIGHTS
   SGID   | run as group owner | inherit group owner
   sticky | ---                | only delete if owner or owner of directory
 
-
-===========================================================================================
-List, set, and change standard ugo/rwx permissions
-===========================================================================================
 
 ===========================================================================================
 Locate, read, and use system documentation including man, info, and files in /usr/share/doc
