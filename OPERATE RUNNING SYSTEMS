@@ -20,7 +20,26 @@ OPERATE RUNNING SYSTEMS
   ps aux
   ps fax   # vztahy mezi rodici a detmi
 
+  man 7 signals
+  
+  pidof bash # Vrátí všechny PID jmenovanych procesu
 
+
+  nice
+   - nice # startuje process s prioritou
+   - renice # zmeni prioritu za behu
+   - top - "R"
+  
+  Realtime processes | Normal 
+  --------------------------------------
+  - kernel           | priority 20
+  
+  nice -20
+  Výsledná priorita 20 - 20 = 0
+  nice 10
+  Výsledná priorita 20 + 10 = 30
+
+  
 ======================================================================
         Locate and interpret system log files and journals
 ======================================================================
