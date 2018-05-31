@@ -1,1 +1,15 @@
 
+/etc/skel
+  obsah se kopiruje pri vytvareni uzivatele
+  
+  
+  
+/etc/default/useradd
+/etc/login.defs
+  ma vyssi prioritu
+  
+ZMENA HESLA
+  echo password | passwd --stdin anna
+  
+CHANGIN AGING INFORMATION
+chage anna
