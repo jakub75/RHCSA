@@ -75,6 +75,7 @@ Start and stop services and configure services to start automatically at boot
      [myrepo]
      name=my demo repository
      baseurl=file:///repo
+     gpgcheck=off
  
 
  
