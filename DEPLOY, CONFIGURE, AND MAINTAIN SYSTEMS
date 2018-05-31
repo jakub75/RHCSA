@@ -6,6 +6,8 @@ Configure networking and hostname resolution statically or dynamically
 =====================================================================================
 
 pro dlouhe prikazy vyuyzit balik BASH-COMPLETION
+. /etc/bash_completion
+
 
 RUNTIME CONFIGURATION
 - primo na sitovou kartu
@@ -55,6 +57,26 @@ Start and stop services and configure services to start automatically at boot
  =====================================================================================
         Install and update software packages from Red Hat Network, a remote repository, or from the local file system
  =====================================================================================
+ 
+ yum # meta package handler
+ 
+ yum repolist # vypise seznam registrovanych repozitaru
+ 
+ VYTVORENI REPOSITARE
+   mkdir /repo
+   cd /repo
+   yumdownloader q*
+   createrepo /repo
+ 
+ REGISTRACE REPOSITARE
+   man yum.conf
+   cd /etc/yum.repos.d
+   vim my.repo
+     [myrepo]
+     name=my demo repository
+     baseurl=file:///repo
+ 
+
  
  =====================================================================================
         Update the kernel package appropriately to ensure a bootable system
