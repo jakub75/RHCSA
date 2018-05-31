@@ -95,7 +95,24 @@ Start and stop services and configure services to start automatically at boot
 PROHLEDAVANI RPM DATABASE
   rpm -q
   
+ PROHLEDAVANI STAZENYCH RPM
+   rpm -qp
+ PROHLEDAVANI OBSAHU BALICKU - SEZNAM SOUBORU
+   rpm -ql bash-completion
  
+ KTERY BALICKE POSKYTUJE SOUBOR
+   rpm -qf /etc/shadow
+
+JAKOU DOKUMENTACI OBSAHUJE BALICEK
+  rpm -qd bash
+  
+JAKE SKRIPTY OBSAHUJE BALICEK
+  STAZENI BALICKU
+    yumdownloader bash
+  PROHLEDANI BALICKU
+    rpm -qp --scripts
+  
+  
  =====================================================================================
         Update the kernel package appropriately to ensure a bootable system
  =====================================================================================
