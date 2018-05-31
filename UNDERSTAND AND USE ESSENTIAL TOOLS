@@ -14,6 +14,11 @@ Use grep and regular expressions to analyze text
 Access remote systems using ssh
 ===========================================================================================
 
+- servery maji male displeje
+- konfigurace ssh klíčů je pohodlná
+ssh-keygen # vygeneruje dvojici klíčů, standardně do .ssh
+ssh-copy-id -i "server"
+
 ===========================================================================================
 Log in and switch users in multiuser targets
 ===========================================================================================
