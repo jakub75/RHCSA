@@ -29,6 +29,15 @@ PERSISTENT CONFIGURATION
 =====================================================================================
 Schedule tasks using at and cron
 =====================================================================================
+     
+       | užití                | daemon
+  ------------------------------------
+  cron | pravidelne sposuteni | crond
+  at   | jednorazove spusteni | atd
+
+FORMAt CRONU
+  /etc/crontab
+
 
 =====================================================================================
 Start and stop services and configure services to start automatically at boot
