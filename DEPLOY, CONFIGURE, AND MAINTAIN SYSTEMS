@@ -35,10 +35,20 @@ Schedule tasks using at and cron
   cron | pravidelne sposuteni | crond
   at   | jednorazove spusteni | atd
 
-FORMAt CRONU
+FORMAT CRONU
   /etc/crontab
 
+KONFIGURACE CRON
 
+  crond |____ /etc/crontab # nepouziva se
+        |
+        |____ anacron /etc/cron.hourly,/etc/cron.daily,/etc/cron.weekly,/etc/cron.monthly
+        |
+        |____ /etc/cron.d
+        
+ atq - vypise naplanovane ulohy
+ atrm - smaze ulohy
+        
 =====================================================================================
 Start and stop services and configure services to start automatically at boot
 =====================================================================================
