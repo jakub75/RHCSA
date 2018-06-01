@@ -43,7 +43,26 @@ OPERATE RUNNING SYSTEMS
 ======================================================================
         Locate and interpret system log files and journals
 ======================================================================
+
+logger
         
+RSYSLOG
+  facility - priority - destination
+      
+ local7.* - anything, tah does not have a facility
+        
+ JOURNALD
+   Defaultne se zpravy vymazavaji pri rebootu
+   mkdir /var/log/journal - zpravy se zapisi
+   
+   journalctl -b #bootlog
+   
+   KONFIGURACE
+     /etc/systemd/journald.conf
+     
+LOGROTATE
+
+  - cronjob 
 ======================================================================
         Access a virtual machine's console
 ======================================================================
