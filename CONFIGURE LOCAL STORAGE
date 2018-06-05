@@ -16,6 +16,16 @@
           fdisk /dev/sda
           
         GDISK
+        
+        
+        FILESYSTEMS
+          Xfs   standard ve RHEL7, rychly, Btree database
+          Ext4   pro zpentou kompatabilitu, zurnalovani
+          Btrfs  bude umoznovat snapshoty, Copy-on-Write file system
+          
+          mkfs - vytvari ext2 FS
+          
+        blkid - locate/print block device attributes
 ==========================================================================================================================        
         Create and remove physical volumes, assign physical volumes to volume groups, and create and delete logical volumes
 ==========================================================================================================================        
