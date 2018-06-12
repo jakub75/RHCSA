@@ -29,7 +29,12 @@
 ==========================================================================================================================        
         Create and remove physical volumes, assign physical volumes to volume groups, and create and delete logical volumes
 ==========================================================================================================================        
-        
+        pvcreate        vytvari fyzicke svazky
+        vgcreate        vytvari Volume groups
+        lvcreate        vytvrai logicke svazky
+        pvs             vypisuje sumar fyzickych svazku
+        vgs
+        lvs
 ==========================================================================================================================        
         Configure systems to mount file systems at boot by Universally Unique ID (UUID) or label
 ==========================================================================================================================        
