@@ -1,9 +1,60 @@
 OPERATE RUNNING SYSTEMS
 -----------------------
 
+systemd system and service manager
+        startuje: (systemctl -t help)
+        
+                service         staci pro zkousku
+                =======
+                socket
+                busname
+                target
+                snapshot
+                device
+                mount
+                automount
+                swap
+                timer
+                path
+                slice
+                scope
+
+system default unit files
+        /usr/lib/systemd/system
+
+system specific modification
+        /etc/systemd/system
+
+-------------------------------------------------------------------------------
+systemctl --type=service                        show only service units
+systemctl list-units --type=service             shows all active service units
+systemctl list-units --type=service --all       aktivni i neaktivni
+systemctl --failed --type=service               havarovane sluzby
+systemctl status -l httpd                       detaily o jedne sluzbe
+--------------------------------------------------------------------------------
+
+ZAVISLOSTI
+        systemctl list-dependencies
+        systemctl list-dependencies --reverse   ktere unity jsou zavisle na tomto unitu
+
+IZOLACE
+        systemctl isolate       nastartuje jenom unit a jeho zavislosti, ostatni zakaze
+
+DEFAULTNI TARGET
+        systemctl get-default
+        systemctl set-defaultyum 
+
 ======================================================================
         Boot, reboot, and shut down a system normally
 ======================================================================
+GRUB2
+        /etc/default/grub
+        rhgb
+        quiet
+        
+        rhgb = redhat graphical boot - This is a GUI mode booting screen with most of the information hidden while the user sees a              rotating activity icon spining and brief information as to what the computer is doing.
+
+        quiet = hides the majority of boot messages before rhgb starts. These are supposed to make the common user more comfortable. They get alarmed about seeing the kernel and initializing messages, so they hide them for their comfort.
         
 =====================================================================
         Boot systems into different targets manually
