@@ -12,12 +12,39 @@ MANAGE SECURITY
 =====================================================================================
         Set enforcing and permissive modes for SELinux
 =====================================================================================
+/etc/selinux/config
+seteforce 0  # set permissive
+seteforce 1  # set enforcing
 
+# Instalace dodatecnych manualovych stranek
+yum install policycoreutils-devel
+sepolicy manpage -a -p /usr/share/man/man8
+
+#dulezity drill !!!
+.....................................................................................
+man -k selinux  # ... malo stranek
+
+yum whatprovides */sepolicy
+  vrati take policycoreutils-devel-2.5-8.el7.i686
+
+yum install policycoreutils-devel
+
+sepolicy manpage -a -p /usr/share/man/man8
+  instaluje radu manualovych stranek
+  
+mandb
+  vygeneruji indexy ...
+  
+man -k _selinux
+   vraci toho ted hafo ...
+   
+.....................................................................................
 
 =====================================================================================
         List and identify SELinux file and process context
 =====================================================================================
-
+ps -eZ
+ll -Z
 
 =====================================================================================
         Restore default file contexts
