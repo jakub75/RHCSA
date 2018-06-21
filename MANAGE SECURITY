@@ -37,7 +37,12 @@ mandb
   
 man -k _selinux
    vraci toho ted hafo ...
-   
+
+semanage - nastavi selinux context
+restorecon - aplikuje z pravidel contexty
+
+restorecon -Rv /   rekurzivne relabeluje fs
+/.autorelabel
 .....................................................................................
 
 =====================================================================================
