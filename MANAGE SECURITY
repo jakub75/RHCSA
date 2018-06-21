@@ -54,14 +54,39 @@ ll -Z
 =====================================================================================
         Restore default file contexts
 =====================================================================================
-
+restorecon -Rv /   rekurzivne relabeluje fs
+/.autorelabel
+restorecon -v /etc/hosts 
+   opravi nastaveni na jednom souboru. Zmeni se treb pri presunu atd...
 
 =====================================================================================
         Use boolean settings to modify system SELinux settings
 =====================================================================================
+getsetbool -a
+  vypise vsechna nastaveni
+
+setsebool ftpd_anon_write on
+  zmena nastaveni - jenom runtime konfigurace
+ 
+semanage boolean -l | grep ftp
+  ftpd_anon_write                (on   ,  off)  Determine whether ftpd can modify public files used for public file transfer services.  Directories/Files must be labeled public_content_rw_t.
+
+setsebool -P ftpd_anon_write on
+  nastavi runtime i defaultni nastaveni na on
+  
+
 
 =====================================================================================
         Diagnose and address routine SELinux policy violations
 =====================================================================================
-
+SELinux loguje vse co dela
+Primarni log je zde
+  /var/log/audit/audit.log
+  grep -i avc /var/log/audit/audit.log
+  
+SEALERT
+  - setroubleshoot client tool
+  - zapisuje srozumitelnejsi zpravy do /var/log/messages
+  yum -y install setroubleshoot-server
+  
 
