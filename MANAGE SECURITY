@@ -5,6 +5,25 @@ MANAGE SECURITY
         Configure firewall settings using firewall-config, firewall-cmd, or iptables
 =====================================================================================
 
+Linuxovy kernel obsahuje modul NETFILTER
+Pravidla se konfiguruji prostrednictvim rozhrani
+  - firewalld - firewall-config (graphical), firewall-cmd (commandline)
+  - iptables
+  
+  Firewalld neni registrovany v systemd jako sluzba
+  firewall-cmd --get-services
+      stav sluzeb
+  
+  Sprava se provadi prostrednictvim ZONE
+  Sluzby se priraduji do patricnych ZONE
+  
+  Service files
+    /usr/lib/firewalld/services
+    /etc/firewalld/services
+    
+  firewall-config, firewall-cmd
+    - in memory state
+    - on-disk-state (permanent state)
 =====================================================================================
         Configure key-based authentication for SSH
 =====================================================================================
