@@ -42,6 +42,23 @@ Pravidla se konfiguruji prostrednictvim rozhrani
     firewall-cmd --list-all --zone=public
     firewall-cmd --list-all
   
+  
+  Pridani sluzby do konfigurace firewallu (runtime)
+    firewall-cmd --add-service=vnc-server
+  
+  Pridani sluzby do konfigurace firewallu (persistent)
+    firewall-cmd --add-service=vnc-server --persistent
+  
+  Nacteni konfigurace firewallu
+    firewall-cmd --reload
+ 
+ Pridani portu do konfigurace
+   firewall-cmd --add-port=2022/tcp --permanent
+ 
+ firewall-cmd options
+   --get-default-zone   vrati aktualne nastavenou defaultni zonu
+   --set-default-zone=<ZONE> zmeni aktualni zonu
+   --get-services
     
     
     
