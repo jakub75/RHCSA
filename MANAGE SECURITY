@@ -16,7 +16,7 @@ Pravidla se konfiguruji prostrednictvim rozhrani
   
   Sprava se provadi prostrednictvim ZONE
   Sluzby se priraduji do patricnych ZONE
-  
+  --
   Service files
     /usr/lib/firewalld/services
     /etc/firewalld/services
@@ -24,6 +24,27 @@ Pravidla se konfiguruji prostrednictvim rozhrani
   firewall-config, firewall-cmd
     - in memory state
     - on-disk-state (permanent state)
+  
+  start firewalld
+    systemctl enable firewald
+    systemctl start firewalld
+  
+  jake je defaultni zona
+    firewald-cmd --get-default-zone
+  
+  jake zony jsou k dispozici
+    firewalld-cmd --get-zones
+  
+  jake jsou v systemu sluzby
+    firewalld-cmd --get-services
+  
+  aktualni nastaveni firewallu
+    firewall-cmd --list-all --zone=public
+    firewall-cmd --list-all
+  
+    
+    
+    
 =====================================================================================
         Configure key-based authentication for SSH
 =====================================================================================
