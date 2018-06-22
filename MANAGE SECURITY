@@ -58,8 +58,14 @@ Pravidla se konfiguruji prostrednictvim rozhrani
  firewall-cmd options
    --get-default-zone   vrati aktualne nastavenou defaultni zonu
    --set-default-zone=<ZONE> zmeni aktualni zonu
-   --get-services
-    
+   --get-services       ukaze vsechny sluzby
+   --list-services      ukaze prave pouzivane sluzby
+   --add-interface=<INTERFACE> prida interface do defaultni zony
+   
+  Graficka utilita firewall-config
+    - pred spustenim provest 
+      yum update -y
+      systemctl restart firewalld
     
     
 =====================================================================================
