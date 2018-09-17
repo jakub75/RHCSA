@@ -64,6 +64,16 @@ SPECIAL RIGHTS
   SGID   | run as group owner | inherit group owner
   sticky | ---                | only delete if owner or owner of directory
 
+SPECIAL RIGHTS - NUMERIC CODES
+
+0 - nothing
+1 - sticky bit
+2 - SGID
+3 - SGID and sticky bit
+4 - SUID
+5 - SUID and sticky bit
+6 - SUID and SGID
+7 - SUID, SGID, and sticky bit
 
 ===========================================================================================
 Locate, read, and use system documentation including man, info, and files in /usr/share/doc
